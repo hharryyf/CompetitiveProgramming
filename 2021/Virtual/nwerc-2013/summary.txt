@@ -1,0 +1,44 @@
+contest link: https://codeforces.com/gym/100405
+
+A. Absurdistan Roads (MST)
+[solved] The idea is firstly create the mst, and then iterate through the distance matrix, find the first mismatch,
+connect the two points with the given weight and done.
+Time complexity: O(N^2logN)
+
+B. Battle for Silver (simulation, ad-hoc)
+[solved] From year 1 math, we should know that there's when |V| > 4, there's no complete graph that is planar.
+Hence, we just need to manipulate complete planar graph of size 1, 2, 3, 4 respectively.
+For |V| = 1, 2, 3, we manipulate the vertices, for |V| = 4, we manipulate the 2 diagonals.
+Time complexity: O(V^3 + E^2).
+
+C. Card Trick (dp)
+[solved] Just create the actual cards with some unknown, and define dp[i] as the probability of success start from i and solve it backward.
+Time complexity: O(NM)
+
+D. Diagrams & Tableaux (bitmask dp)
+[solved] We should observe that if we solve the question from left to right, it's going to be much simpler. We can think how to concatenate two cols together.
+Note that we can represent each col by a mask of 7 bits (common way to model increasing sequence), then define dp[i][mask] as the number of way to 
+form the first i cols with the last col as mask. The rest is a very simple bitmask dp. Starting state can be dp[0][(1 << N) - 1] = 1
+Time complexity: O(N^2 * 4^N), can be optimized but it is not necessary since N <= 7.
+
+F. First Date (simulation)
+[solved] If we want to use the timedelta in python datetime, be careful about the readin input. It mustn't be an invalid date (e.g. 1900-02-29), otherwise, 
+there's runtime error.
+Time complexity: O(1)
+
+G. Grachten (similar triangle)
+[solved] Just a middle school math problem, login.
+Time complexity: O(1).
+
+H. Highway of the Future (smart brute force)
+[solved with 1s hint] The problem uses some smart brute force. We only consider the segments that are vital to a specific car. This can be effectively represented
+by something like vector<start time, vector<end time::fraction, car id::int>>. And with this optimization the complexity is correct.
+The reason for the complexity is correct is again related to the partial sum n/1 + n/2 + ... + n/n = O(nlogn).
+Time complexity: O(N * 100 * log(100) * log(N)).
+
+J. Jingle Balls (ad-hoc, dp)
+[unsolved] This is a very interesting question. If we think it as swapping, it is very difficult. We should think it as allocation and matching.
+Then, after we parse the tree, we can do the following. Define a state f(v, num) as the minimum number of moves required to move in the subtree v,
+such that we need to allocate num balls. The transition is stright-forward, the base case is f(leaf, 0) = 0 and f(leaf, 1) = 1 when leaf has no ball,
+f(leaf, 1) = 0 when leaf has a ball. 
+Time complexity: O(N^2).

@@ -1,0 +1,34 @@
+NEERC is always hard, again I only know how to solve 5 of the problems. 
+https://codeforces.com/gym/100851
+
+A. Adjustment Office (simple math)
+[solved] One of the login problems.
+
+B.  Binary vs Decimal (math)
+[unsolved] This is one of the typical generative questions, we use a process similar to bfs to generate some numbers satisfies some properties.
+
+E. Easy Problemset (simulation)
+[solved] Login problem. 
+
+F. Froggy Ford (binary search on final answer, union-find)
+[solved] The idea of the problem is to binary search on the distance. To avoid case work, we can create (0, yi) and (w, yi) for each stone.
+Then, the problem is reduced to check if there are two points in the two connected components (left and right) has distance less than or equal to 2d.
+
+G. Generators (greedy, implementation)
+[solved] Login level math problem. Just be careful about the implementation. 
+
+J. Jump (constructive algorithm, randomized algorithm)
+[solved] A key observation is C(1000, 500) / 2^1000 ~ 1/25. This means that we can randomly generate the bit-vectors until we get a N / 2 input.
+Then, the idea is how to generate the final string, this can be done easily. 
+
+K. King’s Inspection (ad-hoc, dfs)
+[unsolved] I won't implement this one because I'm sick of this set :(. The idea is to compress all the ordinary vertices together (i.e. those vertices with indegree=1,
+and outdegree=1). If there are more than 1 paths from one special vertex to another, delete the other paths (e.g. 1->4 and 1->3->4, we can delete 1->4). If there are
+two paths between two special vertices such as 1->2->4 and 1->3->4, we know there's no solution. After this compressed graph is created we can do dfs and backtracking
+to solve the problem. 
+
+L.  Landscape Improved (binary search on final answer, ad-hoc)
+[unsolved] The starting point is binary search the height h, but the difficult part is how to validate this. An observation is if the ith element 
+is the peak with height h, then we can try to form a shape like h-2 .. h-1 .. h .. h-1 .. h-2. In other words, we can calculate the blocking position
+on the left and right that must be filled to this given shape such that the current block can be filled up to h. This interval idea is actually quite
+common, but just not easy to come up with.

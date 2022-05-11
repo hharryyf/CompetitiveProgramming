@@ -1,0 +1,56 @@
+Contest link: https://codeforces.com/gym/102428/
+
+
+A. Algorithm Teaching (minimum path cover of DAG)
+[solved] This is a typical flow problem that applies Dilworth's theorem. The idea is to establish the partial order DAG and solve
+the minimum path cover problem. 
+
+B. Build the Perfect House (binary search on final answer, geometry)
+[solved] Similar to 2018 divisional L, we binary search on the parameter. Then, each dot has a bad range, and the bad range has a period of Pi / 2.
+We just want to know if there's any point on the number line that is not covered by any bad intervals. This can be done by only keep the intervals
+with right end point greater than or equal to 0 and lower end point less than or equal to Pi.
+
+C. Cut Inequality Down (binary lifting, search on range tree)
+[solved] We can split each i into 2, one represents starts day i with money L, the other represents starts day i with money U. 
+Then, we try to construct a graph (functional graph without that cycle). Each vertex connects to the leftmost vertex on the left
+such that sum(a[j], j = i..r) < L or sum(a[j], j = i..r) > U. Then we do binary lifting on this constructed graph and for each query,
+we go to the rightmost point on this graph that is no greater than r and answer the query as the sum of 3 intervals. Check code for 
+more details.
+
+D. Dazzling stars (geometry)
+[unsolved] This problem is a bit boring. The idea is we connect each point with higher weight with each point with lower weight, and sort
+these vectors based on their polar angle. If there exists two vectors with angle greater than or equal to Pi, we are done. 
+
+E. Eggfruit Cake (simple math)
+[solved] This is another login problem. Use the total - invalid. Focus on consecutive Ps.
+
+F. Fabricating Sculptures (dp optimization)
+[solved]  we define dp[i][j] = number of ways to put i cubes while there are j cubes in the last layer, condition: i >= j.
+Then we have, dp[i][j] = sum(dp[i-j][k] * (j - k + 1), k <= (i-j) and k >= j)
+                       = sum(dp[i-j][k] * (1 + j) - k * dp[i-j][k] which 0 <= k <= j)
+These two terms can be maintained seperately using two prefix sums.
+
+G.  Gluing Pictures (suffix array, binary search, sparse table)
+[solved] This is a typical suffix array problem. We just concatenate all the strings and build the suffix array. Then, use binary search to find the
+maximum length we can advance. 
+
+I. Improve SPAM (simple dp on dag)
+[solved] This is another login problem. 
+
+J. Jumping Grasshoper (range tree, binary search)
+[solved] This is a fantastic problem. If we play with several examples, we should realize that the maximum on the left of i and the maximum on the right of I
+is critical to this problem. There are several cases. We only consider the case when we move left first, because move right is dual to move left.
+If the maxl < h[i] then, the answer is i. If maxr < h[i] then the answer is the rightmost point with height greater than h[v]. If maxl > maxr, the 
+answer is the rightmost point between [1, i - 1] such that the height is greater than maxr. Otherwise, the answer is the leftmost point between [i+1, N] such
+that the height is greater than maxl. Everthing can be done efficiently with a simple range max tree. 
+
+K. Know your Aliens (polynomial multiplication, divide and conquer)
+[solved] In theory, the size of the input can be up to 1e5 and we can use divide and conquer and FFT to solve this problem. It is just asking
+the full polynomial when we multiply a lot of degree 1 polynomials together. Be careful about the sign of the leading term.
+
+L. Leverage MDT (greedy)
+[solved] It is important to note that we can deal with each rows seperately, and figure out the maximum number of consecutive same character.
+
+
+M. Mountain Ranges (simple greedy)
+[solved] This is a login problem, just greedy sweep. 

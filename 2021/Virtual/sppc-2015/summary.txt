@@ -1,0 +1,36 @@
+It seems like people in 2015 regionals are very inexperienced or it's because the set is difficult,
+I'll see by doing the problems individually.
+
+
+B. Banking II (simple dp)
+[solved] Just define dp[i][j] as the maximum value with first i in string and first j in pattern.
+
+C. Calculating Taxes (dp)
+[solved] Realize a fact that the number of divisors of a number in the given range is no more than 1344.
+Thus, we can use a simple dp with state dp[v][i] representing maximum value we can save in the subtree of v which 
+the node v saves amount i, only do valid transition (i.e. gcd is 1).
+
+E. Earl’s Extremely Efficient Encryption (line sweep)
+[solved] The question is a quite standard line sweep problem, just don't forget about sorting the g_i.
+
+F. Flipping Switches (constructive algorithm, local search)
+[solved] The problem basically says to design a "3-SAT" "solver" such that you cannot satisfies more clauses by only changing 
+one variable assignment. And apparently we can apply the local search technique on this. And the data structure we required is
+just the standard adjacency list variable -> clauses and clauses->literals.
+
+H. Hiking (dijkstra with potential)
+[solved] The reason I can solve this problem is because last year when I was learning mincost=max-flow, I learned something called dijkstra with
+potential. So basically, we run bellman-ford from a src=0 (src->v has weight 0). And then, we relabel the edges w(i, j) = w(i, j) + h[i] - h[j].
+Which h[i] is the shortest path from 0 to i calculated by the bellman-ford. Then, we can run dijkstra on this newly created graph.
+
+J. Jumping Impala (flow, binary search on final answer)
+[solved] We can binary search on this distance, and create a graph which set each vertex capacity to 1. Then, we are simply solving
+calculate the maximum number of path that can cover this graph and check if it is 4. We can run maxflow for this.
+
+K. Krypton Stadiums (range tree, line sweep)
+[solved] The problem is very interesting. First consider when a bad might happen, it happens when (0,n-1)
+does not appear in the input. The remaining part is relatively hard. But it is exactly the same as CF377D.
+We represent each stadium as a rectangle with bottom left vertex (i, a[i]) and top right vertex (b[i], i).
+Then, the problem simply says check if the region that is between (0, 0) (N-1,N-1) that is below the line y=x
+is fully covered. This can be checked with line sweep and range min tree.
+

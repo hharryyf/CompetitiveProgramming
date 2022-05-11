@@ -1,0 +1,14 @@
+This directory consists of the 4 problems that me and my previous team failed to solve during training in December 2020.
+
+
+K. Tournament Wins (expected value trick, probability)
+[unsolved] We want to calculate E[x] = sum(i*p(i), i = 1..k) which p(i) is the probability of winning 
+exactly i matches. However, this is very difficult to be calculated, we should realize that the above expression
+is also equal to sum(Q(i), i = 1..k) which Q(i) = sum(p(j), j = i..k)
+To calculate Q(i), the probability of winning no less than i matches, it is simply equal to
+c(2^k-r, 2^i-1) / c(2^k-1, 2^i-1). Note that this might cause accuracy issues, if we want to calculate this fraction, we can use logs.
+
+L. Windy Path (constructive algorithm, greedy, convex-hull)
+[unsolved] This problem is very difficult. We can just start from the leftmost and bottom most point, then keep applying the following rule,
+if we meet L then we find the right most point that satisfies we can turn left, otherwise, we find the leftmost point that satisfies we can turn right.
+This can be proved by the convex hull property. 

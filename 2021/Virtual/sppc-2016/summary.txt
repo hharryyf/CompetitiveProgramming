@@ -1,0 +1,57 @@
+I did this contest in practice mode.
+
+A. Anticlockwise Motion
+[solved] This problem is quite simple.
+key idea: pattern finding, you can observe what happen if you walk 1 row down and 1 col left from value 1.
+
+B. Balloon Warehouse
+[solved] The problem is extremely interesting.
+key idea: we need to realize that the final pattern has a period and we only need to consider how the pattern
+looks for the first 0 (because it would repeat after the second 0). And we can have some sense of recursive going on.
+Hence, if we do a modified dfs and only store the first 1 million visited points we are done.
+
+C. Crazy Rotations
+[solved] This problem is standard FFT trick, we can process the 3 letters seperately. 
+key idea: put a 1 in position of the processed letter and 0 in other spot, make 1 polynomial with length 2N-1 and other
+with length N, then reverse the one with length N and multiply the 2 polynimials.
+
+D. Dendroctonus
+[solved] This problem is quite simple, we need some guessing and proving though.
+key idea: the center must be one of the following: center of any triangle or center of any segment.
+
+E. Election Frenzy
+[solved] This is a standard trick on graph.
+key idea: use range tree graph construction trick to build any spanning forest of the origional graph.
+
+F. False Intelligence
+[solved] This is a very standard problem for someone working on logic.
+key idea: put the 2 identity elements into the set and generate the remaining set using the 4 rules.
+
+G. Graphics Design
+[don't want to solve right now] This problem is just about implementation. 
+key idea: we use 8 priority queues, each for 1 bitmask. 
+The entire schedule will be partitioned into 4 phases. 
+1) remove all the finished projects and increment the counter for a, b and c
+2) insert the nextsubprojects into the corresponding priority queues
+3) select the highest priority project from the 8 queues and put it into the "do" set
+4) repeat 3) until no valid project exist
+5) repeat 1) - 4) until all projects are done
+
+H. Hilbert’s Hash Browns
+[no idea]
+
+I. Intuidiff II
+[solved] This problem is not hard at all, just hard to understand what it is trying to say.
+key idea: basically, the problem is just asking the maximum weighted subset of non-intersecting segments. This can be solved easily
+with a range tree optimization dp.
+
+J. Just Terraffic!
+[solved] This problem is not hard if you realize it is dp. But since greedy is impossible (too many cases), and N is up to 3e5 what's
+the other option?
+key idea: define dp1[i][j] as the minimum number of type 1 car up to the first i observation and you have j "not closed observations",
+dp2[i][j] as same state but "maximum number". Then just transite and check if dp1[N][0] == dp2[N][0].
+
+
+K. Kiwis vs Kangaroos
+[solved] This is a very simple problem.
+key idea: just implement the scoring rule and you can solve it.

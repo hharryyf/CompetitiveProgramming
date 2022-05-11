@@ -1,0 +1,39 @@
+We successfully solved 8 problems in the practice https://codeforces.com/contest/1267
+
+
+A. Apprentice Learning Trajectory (diff=2400, greedy, line sweep)
+[solved by Ali] I believe this question was overcomplicated during the contest. The idea is to create two events for each interval,
+one is (l+t, 0, ti), the other is (r, 1, ti). Then, we sort these events according to timestamp then by add/delete, then by ti.
+After that we just sweep through these events and a key observation at this stage is integer division can help the process a lot.
+
+
+B. Balls of Buma (diff=900, ad-hoc)
+[solved by me] Observe that the string has some symmetry, we need to reduce the left/right block of same letter together. 
+
+
+E. Elections (diff=1700, greedy)
+[solved by me] We can manipulate which candidate can tie/beat the last candidate, and in order for this to happen, we can firstly
+remove the station that can reduce the difference most violently.
+
+
+F. Foolprüf Security (diff=2600, constructive algorithm)
+[solved by Ali] This question is very difficult. 
+
+
+I. Intriguing Selection (diff=2600, constructive algorithm)
+[solved by Dallas] I'm quite amazed that Dallas said this question is simple... The idea is we can maintain two sets, one of size 2, the other of size n - 1.
+Then, we eliminate the minimum of the two sets. And add a new number to the two sets with smaller size, and repeat the same process for n - 1 times.
+After that, the remaining n items are the results.
+
+
+J. Just Arrange the Icons (diff=1800, greedy)
+[solved by Ali] This is a simple greedy question.
+
+
+K. Key Storage (diff=2100, combinatorics)
+[solved by Dallas and me] We need to satisfy two conditions, 1) 0 cannot be at the final position, 2) the divisor must be greater than the divisor.
+We can ignore 1) at first and subtract the invalid ones after we have calculated 2). 2) is a very simple combinatorics problem. 
+
+
+L. Lexicography (diff=1800, greedy, constructive algorithm)
+[solved by Dallas] I solved this problem before, and it's pretty simple. Just greedily construct until the tie is broken.

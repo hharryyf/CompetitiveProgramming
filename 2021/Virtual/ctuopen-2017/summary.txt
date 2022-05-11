@@ -1,0 +1,48 @@
+contest link: https://codeforces.com/gym/101670
+
+
+A. Amusement Anticipation (simple problem)
+[solved] This is the login problem, too simple.
+
+B. Pond Cascade (binary search on final answer)
+[solved] We can binary search on the finishing time. The validation is quite simple.
+
+C. Chessboard Dancing (constructive algorithm)
+[solved] For the king move, the answer is 4 if N >= 2; For the bitshop and rook, the answer is N; For the knight, since the graph is bipartite
+after N >= 3, the answer is 2.
+
+D. Equinox Roller Coaster (sqrt decomposition)
+[solved] This trick appears another time in CF425D. Let's think how to solve this problem with brute force.
+For each x, we manipulate pair of points and try to determine the another 2 points with a map query.
+The reason for it to be too slow is because some x might have too many y.
+We can use sqrt decomposition. Split the x into 2 types, light and heavy. Light x include those x that has less than or equal to sqrt(N) many points, 
+we use the brute force techniques on these x. For heavy x, we know there are less than sqrt(N) of those, we can manipulate pairs of these heavy chains,
+and the problem is reduced to given a point, given the side length, check if there's a square, it is simple as well.
+Overall time complexity: O(Nsqrt(N)log(N)).
+
+E. Forest Picture (implementation)
+[solved] Break down the painting to left branch, right branch, root/bush. 
+
+F. Shooting Gallery (simple dp)
+[solved] Just a longest palindrome subsequence question.
+
+G. Ice cream samples (line sweep)
+[solved] Just use two pointers, very simple.
+
+H. Dark Ride with Monsters (permutation graph, union find)
+[solved] We can construct the permutation graph, and the answer is simply the sum(|connected component i| - 1, i = 1..number of CC)
+
+I. Go Northwest! (standard trick)
+[solved] Just put elements with the same x+y (or x - y) into the same chunk.
+
+J. Punching Power (flow)
+[solved] 1.3 means the only case two things cannot occur together is when they are adjacent (L-1 distance is 1). Then, just create 
+the bipartite graph and find its maximum independent set.
+
+K. Treetop Walkway (tarjan, constructive algorithm)
+[unsolved] After we run tarjan's algorithm, we run dfs from all the points with indegree 0, and stop once we reach a source.
+Then, we call these pairs match (src1[i], sink1[i]), and there are tol1 many.
+We add edges sink[i] -> src1[(i+1)%tol1].
+Next, assume #indegree=0 <= #outdegree=0 (the other case is dual). Let sink2 = sink \ sink1, and src2 = src \ src1.
+Then, we add edges sink2[i] -> src2[i] for 0 < i < src2.size(), and we add edges sink2[i] -> src[0] for the other i.
+Quite simple to proof this construction is correct. But not simple to come up with. 

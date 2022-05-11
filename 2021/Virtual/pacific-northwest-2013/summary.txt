@@ -1,0 +1,47 @@
+I solved these problems in practice mode.
+https://codeforces.com/gym/101655/attachments/download/6474/20132014-acmicpc-pacific-northwest-regional-contest-en.pdf
+
+A. Assignments
+[solved] this is a stupid problem, make sure no one gets 0 for the contest.
+
+B. Bones’s Battery
+[solved] The idea of this problem is you use floyd and binary search on final answer. Quite standard trick.
+
+C. Crusher’s Code
+[solved] Just define the "state" as a string with '0' - '7' and we are done. 
+The remaining would be a simple expected value dp.
+
+D. Delta Quadrant
+[solved] Note that the total cost when K = 0 is 2 times the sum of all weights. Then the problem can be calculated
+by a knapsack dp on tree. 
+
+E. Enterprising Escape
+[solved] Just a simple dijkstra shortest path.
+
+F. Federation Favorites
+[solved] Another stupid problem. Just run a simple sieve and done.
+
+G. Generations of Tribbles
+[solved] Another stupid problem. Too simple to be a regional contest problem.
+
+H. Holodeck Hacking
+[coached by Ali] The idea is we can use bitmask on carries. If we define the bitmask of carry for the first (len+1)/2 bits here
+len = strlen(llatoi(num)) - 1 or strlen(llatoi(num)), then we can determine all the position sum (i.e. num[i] + rev[len-i-1]).
+ 
+
+I. Interstellar Trade
+[coached by Dallas] I am very bad at solving math construction problems, and I met one :(. Let mid be (min(x) + max(x))/2
+we claim that the wormhole is placed like this [L     h1     x1  mid         x2  h2  R].
+
+K. Klingons
+[solved] This problem is the well-known tree isomorphism which can be done by dfs and encode the tree as '(node(subtree))'.
+Then use double-hashing to do the pattern matching. 
+
+L. Languages
+[solved] Just make sure you read the problem statement clearly, then apply string parsing template and done.
+
+M. Mass Production
+[solved] The idea is we can think the procedure as the target items transform back to the base type and then transform
+to class B items. And to model this procedure, what's better than MCMF? I'm actually quite confused on why so little
+people solve this problem in contest?
+

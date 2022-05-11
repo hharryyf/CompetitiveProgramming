@@ -1,0 +1,41 @@
+Contest link: https://prog4fun.csse.canterbury.ac.nz/mod/quiz/attempt.php?attempt=1247&cmid=50&page=1&scrollpos=390.6666564941406#question-1902-2
+I can solve 10/12 problems without any difficulty but G is hard and E is impossible. 
+
+A. Aligning Typesetting (case work)
+[solved] This is the login problem, just case work.
+
+B. Bad Keming (KMP)
+[solved] The observation is the odd position and even positions are independent. We can calculate the prefix function of {even pos}#{original string},
+and {odd pos}#{original string}. The answer is related to the maximum in the prefix array. 
+
+C. Collecting Stars (greedy, line sweep)
+[solved] Just sort the items based on #prereq first and then based on t, the rest is routine.  
+
+D. Dropping Blocks (math)
+[solved] Login in problem. Just define L[i] as the number of times goes left from i and R[i] as the number of times goes right from i.
+Write out the equalities and obtain several inequalities. 
+
+F. Far, Far Away (fast exponential, floyd)
+[solved] This is just speed up floyd by fast matrix multiplication, and we can use binary lifting to derive the final answer. It is just asking what's the maximum
+power of the original matrix such that there exists a[0][i] <= M.
+
+G. Good Cable Managemen (ad-hoc, LCA)
+[unsolved] This problem is very difficult, but Ray said it's not very uncommon?   
+
+H. Hazardous Driving (dijkstra, union find)
+[solved] This problem is very simple, we keep adding edges of by hazard levels in increasing order until S and E are in the same connected compoment, then
+run dijkstra and done. 
+
+I. Interesting World of Arrays (combinatorics, smarter brute force)
+[solved] This problem is really nice. The idea is the number of count array is limited, we can count 1 of such array at a time.
+The the idea is how many original array match the count array, this is a simple combinatorics (number distinct words formed by permutation of letters) 
+problem, we can count by mod.
+
+J. Judging Divisionals (implementation)
+[solved] Just implement the rules, pay attention to rule A, only 1 team from each university might enter this way.
+
+K. Knights and Dragons (convex-hull)
+[solved] This is just the template problem of convex combination. Build the convex hull, every points on the hull is 'N' otherwise, 'Y'.
+
+L. Laps (math)
+[solved] This is the login problem, just count the number of a[i] > a[i+1].

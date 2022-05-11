@@ -1,0 +1,38 @@
+The problemset is very simple except D. Problem D is way too hard, and now I understand what does the famous saying
+"not good at flow" mean :(. 
+
+A. Atomic Mass (implementation)
+[solved] Login problem, just use python to parse the string.
+
+B. Bake Off (implementation)
+[solved] Just simulate the process.
+
+C. Clever Title (bitmask dp)
+[solved] This problem is a very simple bitmask dp, just define dp[i][j] as the number of ways to satisfy the first i letters with mask j.
+
+E. Extra Judicial Operation (tarjan BCC)
+[solved] The answer is just the number of nodes with degree no greater than 1 minus 1 in the compressed graph after we run the tarjan's bridge finding algorithm.
+
+F. Front Nine (linearity of expected value, dp)
+[solved] We want to calculate E[1/2 * sum(hi + h_(i+1)], i = 0..N - 1), and using linearity of expected value, we just need to calculate the expected value of
+each of the term and sum them up, to support this calculation, we can use p[i][h] to represent the probability of the ith vertical line to be height h.
+
+G. Greedy Generosity (implementation)
+[solved] We can try all change range from correct to correct + 52. And for each of this value, we validate to see if the greedy strategy is working.
+
+H. Hole in One (geometry)
+[solved] The only difficulty of the problem is to find the template to calculate the mirror point of a point with respect to a line.
+
+I. Incomplete Book (implementation)
+[solved] The easiest problem I've ever seen.
+
+J. Jupiter Rock-Paper-Scissors (simulation, mini-max)
+[solved] Just implement this 4 step minimax game (and-or strategy game) which Alice is the maximizer and Bob is the minimizer.
+
+K. Keeping Cool (floyd)
+[solved] construct a graph and run floyd. Just be careful about the target point, u1->target->u2 might not be valid,
+if dist(u1, target) + dist(target, u2) > K. 
+
+L. Lights in the Morning (simple math)
+[solved] Login problem, just case work and do some math on the remainder.
+

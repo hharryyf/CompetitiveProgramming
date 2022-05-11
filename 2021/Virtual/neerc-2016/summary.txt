@@ -1,0 +1,32 @@
+contest link: https://codeforces.com/gym/101190
+We did this contest in team of 3 and solved 6 problems in contest.
+
+A. Abbreviation (implementation)
+[coded by Ali] This is a very annoying implementation question, fortunately Ali solved it.
+
+B. Binary Code (trie, 2-sat)
+[coded by Ali and me] This question is very nice. We should realize it as a 2-SAT problem and to construct the graph, we can use a trie.
+One important observation is if for any string of length i, if it has more than 2 * i occurence, no solution.
+
+D. Delight for a Cat (MCMF)
+[unsolved] The explaination is in the code, it's the most exciting problem I've ever seen.
+
+E. Expect to Wait (line sweep)
+[coded by me] The idea is to plot the prefix sum - time graph, and the answer for each query is the area below a horizontal line.
+
+F. Foreign Postcards (simple dp)
+[coded by Ali] Just a very simple 1-d dp.
+
+G. Game on Graph (game theory, BFS)
+[solved after contest by Ali] This is a very difficult problem, I haven't understood the logic yet. The idea is similar to candidate elimination.
+I'll review this a little bit later.
+
+H. Hard Refactoring (implementation)
+[coded by Dallas] This is the login problem, not too simple to be implemented though.
+
+J. Jenga Boom (3-d geometry)
+[coded by Dallas] If there's a geometry question, just hand it to Dallas, and we'll be safe.
+
+K. Kids Designing Kids (ad-hoc)
+[unsolved, coded after contest] This problem is just asking if it is possible to obtain the 3 binary grid to xor to 0. The idea is 2 grid must have their upper left 1 match.
+I'm amazed that I failed to work this out during contest :(. 

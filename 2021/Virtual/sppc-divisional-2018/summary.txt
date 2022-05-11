@@ -1,0 +1,41 @@
+I timed this practice, and I successfully solved 11 out of 12 problems within 2.5 hours.
+The final question was quite regret, as long as I've solved the latin-America-2019 problem B instead of escaped, I can get it.
+
+A. Australian vs American (simulation)
+[solved] simple, just 6 cases
+
+B. Bombs Ahoy! (line sweep, range tree, bfs)
+[solved] The only interesting problem in this set. Firstly, we solve offline what's the first time a cell is painted.
+Then, based on this info, we do bfs to get what's the shortest distance from starting point to any cell.
+The final cell must be a safe cell.
+
+C. Cryptic Clues (simulation)
+[solved] Just brute force all partition points, the only optimization is only do string comparision when the strings are equal length.
+
+D. Dubious Recordings (calculate contribution)
+[solved] Too routine.
+
+
+E. Easiest Problem (simulation)
+[solved] Login.
+
+F. Flow (primary school math)
+[solved] Login.
+
+G. God’s Number (constructive algorithm)
+[solved] Just work backward and for each operation, do it 3 times.
+
+H. Holiday (line sweep)
+[solved] Just a standard 2-pointer problem.
+
+I. Island of Love (union find)
+[solved] Just work backward and apply union-find.
+
+J. Juice Machine (dp)
+[solved] Just multiply everything by 2520 (lcm of 1 to 10), and the problem is a very simple dp.
+
+K. Krazy Taxi (dfs)
+[solved] Login.
+
+L. Love Actually (binary search on final answer)
+[unsolved] Just use the idea of latin-america-2019 to solve it. The only take away is don't escape.

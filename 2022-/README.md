@@ -8,3 +8,6 @@ The idea is too simple, just start from the right and use the range addition of 
 3. Narrow Components (diff=2500, range tree, divide and conquer, union find)
 The idea is exactly the same as https://codeforces.com/problemset/problem/811/E . I'm amazed someone can't solve it in contest. https://codeforces.com/contest/1661/problem/E
 
+4. Potion Brewing Class (diff=2100, ad-hoc?)
+It is a very simple problem, but I got wrong answer many times because of the place to take mod :(. https://codeforces.com/contest/1654/problem/D
+

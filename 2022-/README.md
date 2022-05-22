@@ -20,5 +20,11 @@ https://codeforces.com/contest/1673/problem/D
 10. Traps (diff=1700, greedy)
 https://codeforces.com/contest/1684/problem/D
 
+11. 388535 (Hard Version) (diff=2300, trie)
+It is obvious that x = l ^ a[i] for some 1 <= i <= r - l + 1. Then, we just need to answer what's the minimum (resp. maximum) of a[i] ^ x and check if it is equal to l (resp. r).
+https://codeforces.com/contest/1658/problem/D2
+
+
+
 
 

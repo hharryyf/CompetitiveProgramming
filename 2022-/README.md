@@ -15,8 +15,7 @@ It is a very simple problem, but I got wrong answer many times because of the pl
 Just manipulate the common difference of the sequence A. It must be a factor of the difference of C, and LCM(diff[A], diff[B]) = diff[C]
 https://codeforces.com/contest/1673/problem/D
 
-
-6 - 9 First rated div2 contest, rank 431 https://codeforces.com/contest/1679
+6 - 9 First rated div2 contest [A-D], https://codeforces.com/contest/1679
 
 10. Traps (diff=1700, greedy)
 https://codeforces.com/contest/1684/problem/D

@@ -38,3 +38,18 @@ The reason I didn't solve it is mainly because I thought how to calculate the fi
 within the correct time complexity. https://codeforces.com/contest/1598/problem/E
 
 
+-- SWERC 2021 - 2022
+
+15. Organizing SWERC [solved] (simulation)
+https://codeforces.com/contest/1662/problem/A 
+
+16. Bottle Arrangements [solved] (construction)
+https://codeforces.com/contest/1662/problem/M
+
+17. Boundary [solved] (math)
+Just do some simple case work, time complexity O(T * sqrt(max(W, L))) https://codeforces.com/contest/1662/problem/H
+
+18. Il Derby della Madonnina [solved] (range tree + dp)
+dp[i] = max(dp[j] + 1 such that 0 <= j < i and |a[i] - a[j]| <= v * (t[i] - t[j])), which the condition is v * (t[j] - t[i]) <= a[i] - a[j] <= v * (t[i] - t[j]), v * t[j] + a[j] <= a[i] + v * t[i], and
+v * t[j] - a[j] <= v * t[i] - a[i]. Thus we are asked the longest non-decreasing subsequence such that for (v * t[i] - a[i], v * t[i] + a[i])
+https://codeforces.com/contest/1662/problem/L

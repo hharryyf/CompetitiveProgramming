@@ -40,6 +40,8 @@ within the correct time complexity. https://codeforces.com/contest/1598/problem/
 
 -- SWERC 2021 - 2022
 
+current SPPC state of art solved 8, we should target for at least 8 :).
+
 15. Organizing SWERC [solved] (simulation)
 https://codeforces.com/contest/1662/problem/A 
 
@@ -49,11 +51,25 @@ https://codeforces.com/contest/1662/problem/M
 17. Boundary [solved] (math)
 Just do some simple case work, time complexity O(T * sqrt(max(W, L))) https://codeforces.com/contest/1662/problem/H
 
-18. Il Derby della Madonnina [solved] (range tree + dp)
+18. Il Derby della Madonnina [solved] (range tree, dp)
 dp[i] = max(dp[j] + 1 such that 0 <= j < i and |a[i] - a[j]| <= v * (t[i] - t[j])), which the condition is v * (t[j] - t[i]) <= a[i] - a[j] <= v * (t[i] - t[j]), v * t[j] + a[j] <= a[i] + v * t[i], and
 v * t[j] - a[j] <= v * t[i] - a[i]. Thus we are asked the longest non-decreasing subsequence such that for (v * t[i] - a[i], v * t[i] + a[i])
 https://codeforces.com/contest/1662/problem/L
 
 19. Circular Maze [solved] (dfs)
 The idea is to use the polar coordinate interpretation. We treat each 1-degree/1-radius region as a vertex, and treat the walls/circular walls as the edges we must delete.
-Then, the question would be a very standard connectivity problem.
+Then, the question would be a very standard connectivity problem. https://codeforces.com/contest/1662/problem/O
+
+20. Ice Cream Shop [solved] (sweep line)
+For each hub, there's an interval that the people in the hub would buy ice-cream in the store if the store is in  such interval.
+Find such interval for each hub using binary search, and use sweep line to do the task. https://codeforces.com/contest/1662/problem/I
+
+21. Antennas [solved] (BFS, range tree)
+Problems similar to this are CF605D and CF198E. Seems like in data structure at least, my problem solving ability is not too far away from state of art :)?
+The idea is there are only a limited number of states but the number of edges in the graph is too many. We need to find nxt in BFS efficiently.
+There are two possibilities: 1) nxt > curr 2) nxt < curr. Here > and < means compare the id of the state. We only explain case 1, because case 2 is dual.
+For case 1, the idea is if i is connected to j (i < j), then i + p[i] >= j and j - p[j] <= i. Therefore, we maintain a range min tree such that each node stores i - p[i].
+If a state is visited, we simply set its value to be INF. hen, at each state, we just find the minimum value also the position of the minimum value in the range [state id, min(N, state id + p[state id])]. Let's call it (val, pos). Then, if val < state, we can simply set dist[pos] = dist[state id] + 1 and also mark the state as visited. For case 2, just use a range max tree instead of range min tree.
+One thing to note is when we mark a node as visited, we must update the position in both trees to be INF/-INF.
+https://codeforces.com/contest/1662/problem/F
+

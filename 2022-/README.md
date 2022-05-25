@@ -53,3 +53,7 @@ Just do some simple case work, time complexity O(T * sqrt(max(W, L))) https://co
 dp[i] = max(dp[j] + 1 such that 0 <= j < i and |a[i] - a[j]| <= v * (t[i] - t[j])), which the condition is v * (t[j] - t[i]) <= a[i] - a[j] <= v * (t[i] - t[j]), v * t[j] + a[j] <= a[i] + v * t[i], and
 v * t[j] - a[j] <= v * t[i] - a[i]. Thus we are asked the longest non-decreasing subsequence such that for (v * t[i] - a[i], v * t[i] + a[i])
 https://codeforces.com/contest/1662/problem/L
+
+19. Circular Maze [solved] (dfs)
+The idea is to use the polar coordinate interpretation. We treat each 1-degree/1-radius region as a vertex, and treat the walls/circular walls as the edges we must delete.
+Then, the question would be a very standard connectivity problem.

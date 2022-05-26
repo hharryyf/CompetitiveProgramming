@@ -43,7 +43,6 @@ within the correct time complexity. https://codeforces.com/contest/1598/problem/
 
 -- SWERC 2021 - 2022
 
-current SPPC state of art solved 8, we should target for at least 8 :).
 
 15. Organizing SWERC [solved] (simulation)
 https://codeforces.com/contest/1662/problem/A 
@@ -75,4 +74,9 @@ For case 1, the idea is if i is connected to j (i < j), then i + p[i] >= j and j
 If a state is visited, we simply set its value to be INF. hen, at each state, we just find the minimum value also the position of the minimum value in the range [state id, min(N, state id + p[state id])]. Let's call it (val, pos). Then, if val < state, we can simply set dist[pos] = dist[state id] + 1 and also mark the state as visited. For case 2, just use a range max tree instead of range min tree.
 One thing to note is when we mark a node as visited, we must update the position in both trees to be INF/-INF.
 https://codeforces.com/contest/1662/problem/F
+
+
+22. Evolution of Weasels [fail] (constriction)
+The critical observation is every B can be moved to arbitrary places in the string, but not A and C. The relative order of A and C cannot be changed. Thus, the idea is to firstly move all Bs to the left,
+and reduce 'AA' and 'CC'. https://codeforces.com/contest/1662/problem/D
 

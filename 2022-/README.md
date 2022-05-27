@@ -80,3 +80,9 @@ https://codeforces.com/contest/1662/problem/F
 The critical observation is every B can be moved to arbitrary places in the string, but not A and C. The relative order of A and C cannot be changed. Thus, the idea is to firstly move all Bs to the left,
 and reduce 'AA' and 'CC'. https://codeforces.com/contest/1662/problem/D
 
+
+23. Drone Photo [fail] (ad-hoc)
+This problem is very technical. N=1500 makes me feel it's impossible to be data structure optimization, and it proves to be a correct guess. The idea is to calculate contribution, but the approach to it
+is quite difficult to come up with. The idea is for each number we calculate how many numbers are less than it in the same row/same col. Let's represent these two quatities as row[i][j] and col[i][j].
+Then, the answer is sum(row[i][j] * (N - 1 - col[i][j]) + col[i][j] * (N - 1 - row[i][j]), i=1..N, j=1..N) / 2. Why this is correct can be verified by drawing a few cases. https://codeforces.com/contest/1662/problem/N
+

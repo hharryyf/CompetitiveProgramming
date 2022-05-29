@@ -87,5 +87,13 @@ is quite difficult to come up with. The idea is for each number we calculate how
 Then, the answer is sum(row[i][j] * (N - 1 - col[i][j]) + col[i][j] * (N - 1 - row[i][j]), i=1..N, j=1..N) / 2. Why this is correct can be verified by drawing a few cases. https://codeforces.com/contest/1662/problem/N
 
 
-24. Unique Occurrences [solved] (range tree, dynamic connectivity)
+24. Unique Occurrences [solved] (diff=2300,range tree, dynamic connectivity)
 We consider the contribution of each edge (u, v, c). It is equal to the size of the component contains u times the size of the component contains v based on the forest with all the edges with color c removed. This changes the problem to a dynamic connectivity problem, add some edges, remove some edges, query the component size. Which can be solved with the range tree on query technique taught by Professor Ray Li. https://codeforces.com/contest/1681/problem/F
+
+25. Yet Another Minimization Problem [solved] (diff=1800, dp)
+We need to realize the optimized term is equal to (a[1] + a[2] + ... + a[n])^2 + (b[1] + b[2] + ... + b[n])^2 + (n-2) * (a[1]^2 + ... + a[n]^2 + b[1]^2 + ... + b[n]^2). Only the first two terms are
+relevant to the order of the numbers. This transforms the problem to a simple dp. https://codeforces.com/contest/1637/problem/D
+
+26. Best Pair [solved] (diff=2100, ad-hoc)
+The observation is there are at most sqrt(N) many frequencies, we can group the numbers according to frequency, and then just brute force. https://codeforces.com/contest/1637/problem/E
+

@@ -86,3 +86,6 @@ This problem is very technical. N=1500 makes me feel it's impossible to be data 
 is quite difficult to come up with. The idea is for each number we calculate how many numbers are less than it in the same row/same col. Let's represent these two quatities as row[i][j] and col[i][j].
 Then, the answer is sum(row[i][j] * (N - 1 - col[i][j]) + col[i][j] * (N - 1 - row[i][j]), i=1..N, j=1..N) / 2. Why this is correct can be verified by drawing a few cases. https://codeforces.com/contest/1662/problem/N
 
+
+24. Unique Occurrences [solved] (range tree, dynamic connectivity)
+We consider the contribution of each edge (u, v, c). It is equal to the size of the component contains u times the size of the component contains v based on the forest with all the edges with color c removed. This changes the problem to a dynamic connectivity problem, add some edges, remove some edges, query the component size. Which can be solved with the range tree on query technique taught by Professor Ray Li. https://codeforces.com/contest/1681/problem/F

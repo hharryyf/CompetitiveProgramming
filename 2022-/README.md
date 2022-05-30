@@ -97,3 +97,16 @@ relevant to the order of the numbers. This transforms the problem to a simple dp
 26. Best Pair [solved] (diff=2100, ad-hoc)
 The observation is there are at most sqrt(N) many frequencies, we can group the numbers according to frequency, and then just brute force. https://codeforces.com/contest/1637/problem/E
 
+27. Weight the Tree [solved] (diff=2000, ad-hoc, dp)
+The idea is to realize unless N=2, there cannot be two adjacent nodes that are all good. Then, the problem reduces to the following: give a tree, no two nodes that are adjacent can be selected at the
+same time. If a node is selected, the weight is deg[v], otherwise, the weight is 1. Find a set of valid selection such that the number of selected node is maximum, and among them choose the selection
+that has the least sum of weight. It's a classic dp. https://codeforces.com/problemset/problem/1646/D
+
+28. Take a Guess [solved] (diff=1800, ad-hoc)
+The idea is we can solve x[1], x[2], x[3] based on the query result of x[1] & x[2], x[1] | x[2], x[1] & x[3], x[1] | x[3], x[3] & x[2], x[3] | x[2]. After that, we can know x[4] to x[n] based on
+queries like x[1] | x[i], x[1] & x[i]. https://codeforces.com/contest/1556/problem/D
+
+29. Not Adding [solved] (diff=1900, ad-hoc, number theory)
+The idea is to check if each of 1 to 1e6 can be the gcd of some subset of the numbers in the array. To do this, we can calculate the gcd of all numbers that are a multiple of i for each i=1..1e6.
+If the gcd is equal to i, then i can be formed. https://codeforces.com/contest/1627/problem/D
+

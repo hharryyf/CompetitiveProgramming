@@ -110,3 +110,6 @@ queries like x[1] | x[i], x[1] & x[i]. https://codeforces.com/contest/1556/probl
 The idea is to check if each of 1 to 1e6 can be the gcd of some subset of the numbers in the array. To do this, we can calculate the gcd of all numbers that are a multiple of i for each i=1..1e6.
 If the gcd is equal to i, then i can be formed. https://codeforces.com/contest/1627/problem/D
 
+30. Vlad and Unfinished Business [solved] (diff=1800, ad-hoc)
+https://codeforces.com/problemset/problem/1675/F
+

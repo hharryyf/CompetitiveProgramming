@@ -113,3 +113,11 @@ If the gcd is equal to i, then i can be formed. https://codeforces.com/contest/1
 30. Vlad and Unfinished Business [solved] (diff=1800, ad-hoc)
 https://codeforces.com/problemset/problem/1675/F
 
+31. Replace the Numbers [solved] (diff=1900, union find)
+For each number we create a tuple (x, t[x]) which means number x with the t[x]-th version. The problem can be reduced to a standard union-find problem.
+https://codeforces.com/contest/1620/problem/E
+
+32. Exact Change [solved] (diff=2000, brute force, ad-hoc)
+The idea is we do not need more than 3 coins of weight 1, more than 3 coins of weight 2, and the number of coins we need for type 3 is related to the maximum weighted coin.
+We can brute force the number of weight 1 coin, the number of weight 2 coin. https://codeforces.com/contest/1620/problem/D
+

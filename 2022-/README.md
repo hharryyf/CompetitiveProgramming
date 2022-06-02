@@ -121,3 +121,18 @@ https://codeforces.com/contest/1620/problem/E
 The idea is we do not need more than 3 coins of weight 1, more than 3 coins of weight 2, and the number of coins we need for type 3 is related to the maximum weighted coin.
 We can brute force the number of weight 1 coin, the number of weight 2 coin. https://codeforces.com/contest/1620/problem/D
 
+33. Subsequences Galore [fail] (diff=2400, bitmask dp)
+The intuition is quite simple. For each mask, we want to calculate the answer. However, there are duplicates, we want to know what's the duplication for each of the mask. For "mask",
+the duplicate is equal to (min[mask]['a'] + 1) * (min[mask]['b'] + 1) * .... The remaining problem is how to calculate the subset sum efficiently. We can use the SOS sum.
+https://codeforces.com/contest/1620/problem/G
+
+34 - 38 codeforces round 795 div2 A - E :(
+https://codeforces.com/contest/1691
+
+39. Too Many Impostors (easy version) [solved] (diff=1800, ad-hoc, construction)
+The easy version is truly easy. We can just query (i, i + 1, i + 2) for all i = 1..N-2. Then, we must realize there exists some i and i+1 such that
+(i, i+1, i+2) returns differently from (i+1,i+2,i+3). This would ensure we know at a zero and an one. Then, we can get everything with this info.
+https://codeforces.com/contest/1617/problem/D1
+
+40. Too Many Impostors (hard version) [solved] (diff=2400, ad-hoc, construction)
+The hard version is not truly hard.  

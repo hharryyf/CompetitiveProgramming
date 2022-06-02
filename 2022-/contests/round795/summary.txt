@@ -1,0 +1,23 @@
+Contest link: https://codeforces.com/contest/1691
+I did this round with Edward and we did pretty well, solved 5/6 problems. But for me it was a complete disaster, first time in history
+in sweeping + data structure I was fucked by Ed :(. 
+
+A. Beat The Odds [solved by me, 1/1] (ad-hoc)
+The idea is the final array must be all even numbers or all odd numbers, just count which is fewer and remove all.
+
+B. Shoe Shuffling [solved by me, 1/1] (ad-hoc)
+The idea is the problem has solution if and only if each number appears at least twice, we can just do a cyclic shift for the numbers with same value.
+
+C. Sum of Substrings [solved by Edward, 1/2] (ad-hoc)
+This problem is quite difficult for me. The idea is we observe that no matter how we change the position of 1, we long as it's not in the left/right end of the array,
+we do not get any benifits. Just consider the two cases and done.
+
+D. Max GEQ Sum [solved by me, 1/1] (range tree)
+The idea is consider if it's possible for some interval [l, r] that has a maximum a[i] such that l <= i <= r with the maxinum subarray sum(l, r) is greater than a[i].
+This can be done by range tree easily. 
+
+E. Number of Groups [solved by Edward, 1/1] (line sweep, union find)
+The most embarrassing problem in history, I can't solve a sweeping problem but Ed solved it in 1 go lol. The critical observation is: if for some segment, there exists
+a red and a blue interval, then everything in the segment can be connected. And only the segment (one blue and one red) with the maximum right bound need to be preserved.
+
+

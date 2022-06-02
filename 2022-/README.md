@@ -135,4 +135,9 @@ The easy version is truly easy. We can just query (i, i + 1, i + 2) for all i = 
 https://codeforces.com/contest/1617/problem/D1
 
 40. Too Many Impostors (hard version) [solved] (diff=2400, ad-hoc, construction)
-The hard version is not truly hard.  
+The hard version is not truly hard. There are 3 observations: 1) if we query (1, 2, 3), (4, 5, 6), ..., we can get at least a zero and at least a one.
+2) after we retrieve the zero and one, we can determine the values of the 6 numbers using an additional 6 queries, how it can be done is related to part D1.
+3) then, we only have 2n/3 queries remaining, for each of the (1, 2, 3), ... queries we have done in phase 1, if the result is 0, we can query twice (1, 2, pos_1), (2, 3, pos_1)
+for example, and determine all numbers, similar for the result of 1. https://codeforces.com/contest/1617/problem/D2
+
+

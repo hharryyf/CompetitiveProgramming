@@ -141,4 +141,6 @@ The hard version is not truly hard. There are 3 observations:
 3) then, we only have 2n/3 queries remaining, for each of the (1, 2, 3), ... queries we have done in phase 1, if the result is 0, we can query twice (1, 2, pos_1), (2, 3, pos_1)
 for example, and determine all numbers, similar for the result of 1. https://codeforces.com/contest/1617/problem/D2
 
+41. GCD and MST [solved] (diff=2000, union find)
+The idea is quite standard, since gcd <= min, we just need to manipulate the min element of each interval. And each interval is centered at a[i], and the left side and right side contain numbers that are multiple of a[i]. https://codeforces.com/contest/1513/problem/D
 

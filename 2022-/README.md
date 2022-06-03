@@ -144,3 +144,12 @@ for example, and determine all numbers, similar for the result of 1. https://cod
 41. GCD and MST [solved] (diff=2000, union find)
 The idea is quite standard, since gcd <= min, we just need to manipulate the min element of each interval. And each interval is centered at a[i], and the left side and right side contain numbers that are multiple of a[i]. https://codeforces.com/contest/1513/problem/D
 
+42. Cut [solved] (diff=2100, binary-lifting)
+The observation is we can always pick the intervals greedily. For each index i, if we want to extent the subrange to the right, the first place to stop is the place to stop for i + 1
+or the index j such that a[j] contains the same prime as a[i]. With this observation, we can construct a functional graph, each node has a link to the right. We want to know what's the minimum number of steps to jump from l to anywhere that's on the right of r. This can be done easily with binary-lifting (actually the idea from https://codeforces.com/contest/1175/problem/E). https://codeforces.com/contest/1516/problem/D
+
+43. Interacdive Problem [solved] (diff=2000, ad-hoc)
+The problem is similar to the trick of problem I in https://codeforces.com/gym/100307/attachments. For that problem I, I had no idea, but this time I know how this problem can be solved. The idea is to query c that can have the highest information gain (i.e. regardless of what's the return of the query we can remove the most number). For that problem I, I remembered Ali used binary search to search the binarys search bound. But given the constraints of this problem, we can just use brute force to search that bound.
+https://codeforces.com/contest/1624/problem/F
+
+

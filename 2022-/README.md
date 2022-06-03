@@ -152,4 +152,7 @@ or the index j such that a[j] contains the same prime as a[i]. With this observa
 The problem is similar to the trick of problem I in https://codeforces.com/gym/100307/attachments. For that problem I, I had no idea, but this time I know how this problem can be solved. The idea is to query c that can have the highest information gain (i.e. regardless of what's the return of the query we can remove the most number). For that problem I, I remembered Ali used binary search to search the binarys search bound. But given the constraints of this problem, we can just use brute force to search that bound.
 https://codeforces.com/contest/1624/problem/F
 
+44. MinOr Tree [solved] (diff=1900, union find, greedy)
+The idea is we check the bits from high to low, and see if we can ignore a bit but still form a valid spanning tree, if not, we must contain that bit. https://codeforces.com/contest/1624/problem/G
+
 

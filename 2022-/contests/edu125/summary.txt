@@ -1,0 +1,28 @@
+I did this one virtually with Edward. We did pretty bad, solved 4 out of 6 problems and spent a lot of time.
+Contest link: https://codeforces.com/contest/1657
+The main reason for the slow and bad performance is Edward targeted E from almost the first minute of the contest and gave me no
+support on problem D.
+
+A. Integer Moves [solved by me] (diff=800, log in..)
+Just case work. 
+
+B. XY Sequence [solved by me] (diff=800, greedy)
+Just the simpliest greedy strategy, put X until it exceeds B, put some Y, repeat.
+
+C. Bracket Sequence Deletion [solved by Edward] (diff=1200, ad-hoc)
+The idea is to observe the first two characters of an interval. There are 4 cases:
+1) "()", then it's good because of balance
+2) "((", then it's palindrome
+3) "))", then it's palindrome
+4) ")(", then we need to keep scaning to the right until we meet the first ")".
+
+D. For Gamers. By Gamers. [solved by me] (diff=2000, harmonic sum, simple dp, binary search)
+No comment. This problem could be done much quicker, if I had not told Edward someone has solved problem E.
+
+E. Star MST [fail] (diff=2200, dp)
+
+
+
+
+
+

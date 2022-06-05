@@ -155,4 +155,16 @@ https://codeforces.com/contest/1624/problem/F
 44. MinOr Tree [solved] (diff=1900, union find, greedy)
 The idea is we check the bits from high to low, and see if we can ignore a bit but still form a valid spanning tree, if not, we must contain that bit. https://codeforces.com/contest/1624/problem/G
 
+45. notepad.exe [fail] (diff=2200, ad-hoc)
+The problem is quite amazing. It's very natrual to come up with a solution that requires n * log(n * 2000) many queries, just by iterating through
+all possible heights and query the minimum W that can produce this height. However, that's wrong answer, the number of queries is too much.
+The idea is we can spend log(n * 2000) many queries to get the total length of A = l_i + (n - 1). Next, we need to apply a critical observation, which
+is for a specific height, the minimum area possible is A - h + 1. Note that, the area must be within [A - h + 1, A], otherwise, it's either invalid
+or unoptimal. Another observation is the area for a specific height h must be divisible by h, and this solves the problem. We only need to do 1 query
+per height from 1 to n. https://codeforces.com/contest/1672/problem/E
+
+46. Paired Payment [solved] (diff=2200, shortest path)
+We should notice that the edge weight is no greater than 50, we can make good use of that. Define dist[v][pre] as the minimum distance
+from vertex 1 to vertex v while the previous edge connect to v has weight pre. This can easily cover all states. The only thing to be careful
+is when pre=0, we mean the node v is "reachable" from 1 by going the "2-step" moves. https://codeforces.com/problemset/problem/1486/E
 

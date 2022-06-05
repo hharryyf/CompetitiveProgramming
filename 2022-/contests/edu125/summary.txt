@@ -1,6 +1,6 @@
 I did this one virtually with Edward. We did pretty bad, solved 4 out of 6 problems and spent a lot of time.
 Contest link: https://codeforces.com/contest/1657
-The main reason for the slow and bad performance is Edward targeted E from almost the first minute of the contest and gave me no
+The main reason for the slow and bad performance is some ridiculous guy targeted E from almost the first minute of the contest and gave me no
 support on problem D.
 
 A. Integer Moves [solved by me] (diff=800, log in..)

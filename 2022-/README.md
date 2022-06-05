@@ -168,3 +168,6 @@ We should notice that the edge weight is no greater than 50, we can make good us
 from vertex 1 to vertex v while the previous edge connect to v has weight pre. This can easily cover all states. The only thing to be careful
 is when pre=0, we mean the node v is "reachable" from 1 by going the "2-step" moves. https://codeforces.com/problemset/problem/1486/E
 
+47 - 51 Educational Codeforces Round 125  A - E
+https://codeforces.com/contest/1657
+

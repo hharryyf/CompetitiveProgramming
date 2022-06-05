@@ -20,7 +20,16 @@ D. For Gamers. By Gamers. [solved by me] (diff=2000, harmonic sum, simple dp, bi
 No comment. This problem could be done much quicker, if I had not told Edward someone has solved problem E.
 
 E. Star MST [fail] (diff=2200, dp)
-
+dp[i][j], how many vertices connected to vertex 1, and the maximum weight does not exceed j. 
+Answer dp[N-1][K].
+We do forward transition. dp[i][j] --> dp[i + k][j+1]. Here we can manipulate how k from 0 to N - 1 - i, which is how many vertices we want 
+to connect to vertex 1.
+Let's think what's the contribution of state dp[i][j].
+(1) we have C(N - i - 1, k) ways of selecting the other k points we want to connect
+(2) also there are k * (k - 1) / 2 + k * i many edges we need to connect
+(3) each edge needs to choose from weights j + 1 to K 
+Thus, dp[i][j] can add dp[i][j] * C(N - i - 1, k) * power(K - j, k * (k - 1) / 2 + k * i)  to dp[i+k][j+1]. 
+                
 
 
 

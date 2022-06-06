@@ -1,5 +1,5 @@
-These problems are done in a secrete practice mode (i.e. virtual contest without registration) to avoid embarrassment. I can solve problem
-A to E with 1h28m, and all AC in 1 shot. F has rating 3000, we just ignore it. https://codeforces.com/contest/1535/
+These problems are done in a secrete practice mode (i.e. virtual contest without registration) to avoid embarrassment if the performance is too bad.
+I can solve problem A to E with 1h28m, and all AC in 1 shot. F has rating 3000, we just ignore it. https://codeforces.com/contest/1535/
 
 A. Fair Playoff [solved] (diff=800, login)
 

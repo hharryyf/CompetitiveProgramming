@@ -176,6 +176,6 @@ The idea is once we run the top-sort algorithm, there are only deg != 0 vertices
 Otherwise, there's always a solution. We check the pairs from the largest difference of in-degree to the minimum difference of in-degree,
 once the judge returns yes, we just print the pair. https://codeforces.com/contest/1498/problem/E
 
-53. Educational Codeforces Round 110 A - E
+53 - 57 Educational Codeforces Round 110 A - E
 https://codeforces.com/contest/1535
 

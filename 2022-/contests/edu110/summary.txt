@@ -1,0 +1,24 @@
+These problems are done in a secrete practice mode (i.e. virtual contest without registration) to avoid embarrassment. I can solve problem
+A to E with 1h28m, and all AC in 1 shot. F has rating 3000, we just ignore it. https://codeforces.com/contest/1535/
+
+A. Fair Playoff [solved] (diff=800, login)
+
+B. Array Reodering [solved] (diff=900, ad-hoc)
+Just put the even numbers before all the odd numbers.
+
+C. Unstable String [solved] (diff=1400, simple dp)
+Just record the maximum length of a beautiful substring end at each i with character 0/1. And the answer is simply the sum
+of max(dp[i][0], dp[i][1]) for all i.
+
+D. Playoff Tournament [solved] (diff=1800, range tree)
+It's simple to see that each modification would only affect a single path on the tree (not necessarily root to leaf). Use range tree
+that supports divide and conquer would solve the problem.
+
+E. Gold Transfer [solved] (diff=2200, binary-lifting, greedy, amortized complexity)
+The observation is we always should start from the root and take the items on the root to v path according to the order of root->v.
+And since no items can be added to the nodes that has a[v] modified to 0, the position of the vertex that has a[v] != 0 always go deeper.
+Hence, we can use binary lifting to find the upper most vertex that has a[v] != 0. Repeat this procedure until there exists no vertex
+on the v -> root path has a[v] = 0 or w = 0.
+
+
+

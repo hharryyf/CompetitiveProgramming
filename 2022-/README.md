@@ -171,3 +171,11 @@ is when pre=0, we mean the node v is "reachable" from 1 by going the "2-step" mo
 47 - 51 Educational Codeforces Round 125  A - E
 https://codeforces.com/contest/1657
 
+52. Two Houses [solved] (diff=2200, ad-hoc)
+The idea is once we run the top-sort algorithm, there are only deg != 0 vertices. If there's no such vertex, the answer is "! 0 0".
+Otherwise, there's always a solution. We check the pairs from the largest difference of in-degree to the minimum difference of in-degree,
+once the judge returns yes, we just print the pair. https://codeforces.com/contest/1498/problem/E
+
+53. Educational Codeforces Round 110 A - E
+https://codeforces.com/contest/1535
+

@@ -179,3 +179,21 @@ once the judge returns yes, we just print the pair. https://codeforces.com/conte
 53 - 57 Educational Codeforces Round 110 A - E
 https://codeforces.com/contest/1535
 
+58. Equilibrium [solved] (diff=2200, range tree, ad-hoc)
+We can create the cumulative sum array for b[i] - a[i]. Then, the answer is simply the maximum element in the range [l, r] - prefix[l-1].
+The -1 case happens when the cumulative sum of range [l, r] is not 0 or there exists a negative element of the cumulative sum created by the subarray
+[l, r]. https://codeforces.com/contest/1556/problem/E
+
+59. Power Board [solved] (diff=2200, ad-hoc)
+This problem is a pure "problem solving problem". We should observe if a number has prime factorization mul(p1^r1,p2^r2,p3^r3,...pn^rn), it can only
+create duplicates with mul(p1^(r1 * g),p2^(r2 * g),p3^(r3 * g),...pn^(rn * g)) for some g. Not difficult to observe g < 20.
+Thus, we can calculate the answer based on groups, each group is some number with prime factorazation such that the gcd(r1, r2, ..., rn) = 1.
+How to calculate the answer for each group is relatively simple. https://codeforces.com/contest/1646/problem/E
+
+60. Equidistant Vertices [solved] (diff=2200, ad-hoc, dp)
+When K=2, the answer is just C(N, 2). Otherwise, the points must be distributed with respect to a "center" and has equal distance to the "center".
+We can manipulate the center and also the distance. However, somewhere we can get wrong answer is just count how many points are distance d away from
+the center c while ignoring that some of the points can not be selected together. Suppose the center is C, then we need to group the points into 
+several groups with respect to the child of C. Each child we can only select a single point. This reduces the problem to a knapsack dp problem.
+Overall time complexity O(K*N^2). https://codeforces.com/contest/1551/problem/F
+

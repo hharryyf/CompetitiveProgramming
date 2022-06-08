@@ -207,3 +207,6 @@ If x + y is large, we can simply brute force and update all the related interval
 if and only if the date % (x + y) is within the maintainance range. Note that if (x + y) is small, the range is small as well. Hence, our solution
 is set the x + y limit to be sqrt(M), and deal with these two cases seperately. https://codeforces.com/contest/1580/problem/C
 
+63. Non-Decreasing Dilemma [solved] (diff=2200, range tree, divide and conquer)
+I've solved these kind of problem +inf many times, no comment. https://codeforces.com/contest/1567/problem/E
+

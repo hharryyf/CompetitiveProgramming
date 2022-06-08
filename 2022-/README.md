@@ -197,3 +197,13 @@ the center c while ignoring that some of the points can not be selected together
 several groups with respect to the child of C. Each child we can only select a single point. This reduces the problem to a knapsack dp problem.
 Overall time complexity O(K*N^2). https://codeforces.com/contest/1551/problem/F
 
+61. Cars [solved] (diff=2200, bipartite coloring, top-sort)
+If we have a constraint, it is easy to see that the two cars must move in the opposite direction. This observation tells us we can construct a 
+bipartite graph, and do black/white coloring. If the color is black, we say the car is moving left, otherwise, the car moves right. Now once 
+we fix the directions, we can calculate the relative position of the cars using top-sort. https://codeforces.com/problemset/problem/1635/E
+
+62. Train Maintenance [solved] (diff=2200, sqrt decomposition)
+If x + y is large, we can simply brute force and update all the related intervals. If x + y is short, we know that the train is under maintainance
+if and only if the date % (x + y) is within the maintainance range. Note that if (x + y) is small, the range is small as well. Hence, our solution
+is set the x + y limit to be sqrt(M), and deal with these two cases seperately. https://codeforces.com/contest/1580/problem/C
+

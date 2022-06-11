@@ -300,3 +300,10 @@ For each number v in the array i, we add an undirected edge <i, v>. The answer t
 euler cycles. And to print the answer, we just need to direct the edges of those circuits, let's say if the traversal is from array index --> number,
 we put the number to the R set, otherwise, L set. https://codeforces.com/contest/1634/problem/E
 
+72. Arithmetic Operations [fail] (diff=2300, sqrt decomposition)
+An important property I forgot: for arithmetic progression, we can subtract i * d from a[i] and check the mode of the sequence to see the 
+maximum number of elements we can save. Given this property, when d is small, we can just use this brute force way of checking.
+If d is large, note that for each number i, we can only save numbers which index in range [i - 1e5 / d, i + 1e5 / d]. This gives us the full solution.
+https://codeforces.com/contest/1654/problem/E
+
+

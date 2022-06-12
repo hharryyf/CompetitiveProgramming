@@ -306,4 +306,23 @@ maximum number of elements we can save. Given this property, when d is small, we
 If d is large, note that for each number i, we can only save numbers which index in range [i - 1e5 / d, i + 1e5 / d]. This gives us the full solution.
 https://codeforces.com/contest/1654/problem/E
 
+73. Pattern Matching [solved] (diff=2300, top-sort)
+The idea is quite simple. For a string, it can only match at most 2^K many patterns. It is if a position j of the string is x, the jth position of the 
+pattern must be either x or '_'. With this observation, the constraint simply says a pattern should be in front of all the other patterns the string 
+i matches. The answer is yes if and only if there's a partial order that can model all these constraints. It's a typical top-sort problem.
+https://codeforces.com/contest/1476/problem/E
+
+74. Hemose in ICPC ? [solved] (diff=2300, ad-hoc)
+The gcd is definitely the maximum edge in the graph. Hence, we can do queries according to dfs order. The query type is query all the points 
+that has dfs order no greater than x. Binary search the smallest x such that the query returns the same value as we put in all the points.
+Answer would be x and the parent of x. https://codeforces.com/contest/1592/problem/D
+
+75. Tree Array [fail] (diff=2300, dp)
+This is hard. The problem can be eventually transformed into the following: given two numbers x and y, we can reduce 1 from x/y with equal probability,
+and there's also a probability of not doing anything at each step. What's the probability of x be reduced to 0 before y. This problem can be solved with
+dp. And the probability of not doing anything doesn't matter. Now, let's think how this problem relates to the reduced problem. For a pair (a, b),
+before the lca is selected, any sequence of moves won't affect the outcome. Hence, contribution of a pair (a, b) a > b can be interpreted as the 
+reduced problem given that x = height[a] - height[lca(a, b)], y = height[b] - height[lca(a, b)]. We should repeat the problem for every pair (a, b) 
+for all root i = 1..N, sum up, and done. https://codeforces.com/contest/1540/problem/B
+
 

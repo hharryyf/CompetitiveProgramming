@@ -325,4 +325,18 @@ before the lca is selected, any sequence of moves won't affect the outcome. Henc
 reduced problem given that x = height[a] - height[lca(a, b)], y = height[b] - height[lca(a, b)]. We should repeat the problem for every pair (a, b) 
 for all root i = 1..N, sum up, and done. https://codeforces.com/contest/1540/problem/B
 
+76. Two chandeliers [solved] (diff=2200, binary search, chinese remainder theorem)
+Instead of counting how many days a[i] != b[i], we can binary search on the number of days and subtract the number of days a[i] = b[i].
+Since each array is distinct, for v \in a, and v \in b, suppose v = a[x] and v = b[y]. Then, we want the minimum ans such that 
+ans = x mod N and ans = y mod M. This equation can be solved by chinese remainder theorem, we just fill in the template and done. The template 
+I found was copied from Edward's submission. https://codeforces.com/contest/1501/problem/D
+
+77. Sereja and Squares [solved] (diff=2300, sqrt decomposition)
+We partition the x coordinates into heavy-light. For the x-coordinate that has less than sqrt(N) many points, we just manipulate the points with 
+brute force, for the x-coordinate that has more than sqrt(N) many points, we just manipulate pairs of heavy x-coordinates.
+https://codeforces.com/contest/425/problem/D
+
+78.  Guess The String [solved] (ad-hoc, binary search)
+https://codeforces.com/contest/1697/problem/D
+
 

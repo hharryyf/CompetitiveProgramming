@@ -353,5 +353,9 @@ With these observations, we can use HLD to solve the problem. https://codeforces
 81. Make The Fence Great Again [solved] (diff=1800, dp)
 The only observation is the maximum increase for each index is very limited. https://codeforces.com/contest/1221/problem/D
 
+82. Easy Problem [solved] (diff=1800, dp)
+We are basically modeling a finite state automa. The states are _, h, ha, har. We simply define dp as the minimum cost at the ith character 
+to maintain each of those states. https://codeforces.com/contest/1096/problem/D
+
 
 

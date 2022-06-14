@@ -339,4 +339,19 @@ https://codeforces.com/contest/425/problem/D
 78.  Guess The String [solved] (ad-hoc, binary search)
 https://codeforces.com/contest/1697/problem/D
 
+79. Enchanted Artifact [fail] (diff=2300, ad-hoc, greedy)
+The idea is actually the simpliest one. Firstly try to get the length of the string, and how many 'a's and 'b's. Next, generate a string,
+fix each position to the opposite, and see if the edit distance increased or not, if it increased, it means we shouldn't flip, otherwise, flip.
+https://codeforces.com/contest/1282/problem/D
+
+80. Good Graph [solved] (diff=2700, HLD)
+There are two important observations: 
+    (1) the odd cycles can only intersect at vertices but not edges
+    (2) if an edge appears in an odd cycle, if the other odd cycle contains that edge, the second odd cycle is invalid
+With these observations, we can use HLD to solve the problem. https://codeforces.com/contest/1555/problem/F
+
+81. Make The Fence Great Again [solved] (diff=1800, dp)
+The only observation is the maximum increase for each index is very limited. https://codeforces.com/contest/1221/problem/D
+
+
 

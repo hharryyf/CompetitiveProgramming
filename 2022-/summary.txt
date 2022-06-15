@@ -336,7 +336,7 @@ We partition the x coordinates into heavy-light. For the x-coordinate that has l
 brute force, for the x-coordinate that has more than sqrt(N) many points, we just manipulate pairs of heavy x-coordinates.
 https://codeforces.com/contest/425/problem/D
 
-78.  Guess The String [solved] (ad-hoc, binary search)
+78.  Guess The String [solved] (diff=1900, ad-hoc, binary search)
 https://codeforces.com/contest/1697/problem/D
 
 79. Enchanted Artifact [fail] (diff=2300, ad-hoc, greedy)
@@ -357,5 +357,17 @@ The only observation is the maximum increase for each index is very limited. htt
 We are basically modeling a finite state automa. The states are _, h, ha, har. We simply define dp as the minimum cost at the ith character 
 to maintain each of those states. https://codeforces.com/contest/1096/problem/D
 
+83. Journey [solved] (diff=1800, dp)
+Just remember, we cannot use a 2-d long long array. Otherwise, we might get MLE. https://codeforces.com/contest/721/problem/C
 
+84. A Twisty Movement [solved] (diff=1800, dp)
+We can calculate the LIS between [l, r] for the reverse array. Then, the final answer is definitely some 1 -- the reverse [l, r], some 2.
+Just manipulate [l, r] and done. https://codeforces.com/contest/933/problem/A
+
+85. Gotta Go Fast [fail] (diff=2400, binary search, dp)
+This problem is difficult because the state is cyclic. It's natrual to define dp[i][j] as the total minimum time to finish the game when we are 
+at state i and have spent j in the current run. Then, dp[i][j] = min(dp[1][0], (dp[i+1][j+f[i]] + f[i]) * p[i] + (dp[i+1][j+s[i]] + s[i]) * (1 - p[i])).
+However, we need future state to decide the current state. Now we can binary search on dp[1][0], and see if the derived dp[1][0] can be lower than 
+this value, if yes, it means we can reduce the dp[1][0]. This technique actually appears in another problem https://codeforces.com/gym/103049/problem/G
+https://codeforces.com/contest/867/problem/D
 

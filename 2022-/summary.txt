@@ -371,3 +371,13 @@ However, we need future state to decide the current state. Now we can binary sea
 this value, if yes, it means we can reduce the dp[1][0]. This technique actually appears in another problem https://codeforces.com/gym/103049/problem/G
 https://codeforces.com/contest/867/problem/D
 
+86. Double Happiness [fail] (diff=2200, number theory)
+When t = 4k + 1 and is a prime, we can count it. https://codeforces.com/contest/113/problem/C
+
+87. Palindromic Paths [solved] (diff=2400, ad-hoc)
+We apply the following procedure: (1) fix all the value of the grid with coordinate (x + y) even. These values can be fixed by distance 2 queries.
+(2) bipartite the grid with coordinate (x + y) odd. We can temporarily let one part to be 0 while the other be 1.
+(3) there must exists a consecutive 4 cells such that its xor is 0. (4) query the 4 consecutive cells, fix the value for grid with coordinate (x + y) odd.
+https://codeforces.com/contest/1205/problem/C
+
+

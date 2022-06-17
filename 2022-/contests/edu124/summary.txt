@@ -1,0 +1,25 @@
+This virtual contest is very boring, since E has rating 2600, way beyond our problem solving ability, I didn't gain much from it.
+Next time, if problem E has rating strictly above 2400, I will definitely not practice that set. 
+https://codeforces.com/contest/1651
+
+A.  Playoff [coded by me] (diff=800, login)
+
+B. Prove Him Wrong [coded by Edward] (diff=800, login)
+
+C. Fault-tolerant Network [coded by Edward] (diff=1500, greedy, case work)
+We have the following cases 
+(1) a[1] --> b[n], b[1] --> a[n].
+(2) a[1] --> b[1], a[n] --> b[n].
+(3) a[1] --> b[n], b[1] with a[x] such that |b[1] - a[x]| is minimum, a[n] with b[y] such that |a[n] - b[y]| is minimum
+(4) similar to (3), 3 edges just let a[1] --> b[1]
+(5) similar to (3), b[1] --> a[n]
+(6) simlar to (3), b[n] --> a[n]
+(7) link 4 edges 
+
+D. Nearest Excluded Points [coded by Edward] (diff=1900, shortest path, BFS)
+This problem is quite sad, I kept thinking sqrt tricks, but actually the simplest solution works. Just put all the points that's not in the 
+forbidden points but adjacent to at least 1 forbidden points as the sources, and run BFS. To avoid TLE, we mustn't push any not forbidden points
+into the queue. 
+
+E. Sum of Matchings [fail] (diff=2600, ad-hoc)
+pending, I'll do it tomorrow

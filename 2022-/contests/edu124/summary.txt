@@ -21,5 +21,3 @@ This problem is quite sad, I kept thinking sqrt tricks, but actually the simples
 forbidden points but adjacent to at least 1 forbidden points as the sources, and run BFS. To avoid TLE, we mustn't push any not forbidden points
 into the queue. 
 
-E. Sum of Matchings [fail] (diff=2600, ad-hoc)
-pending, I'll do it tomorrow

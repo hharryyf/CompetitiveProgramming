@@ -380,4 +380,6 @@ We apply the following procedure: (1) fix all the value of the grid with coordin
 (3) there must exists a consecutive 4 cells such that its xor is 0. (4) query the 4 consecutive cells, fix the value for grid with coordinate (x + y) odd.
 https://codeforces.com/contest/1205/problem/C
 
+88 - 91 Educational Codeforces Round 124  A - D
+https://codeforces.com/contest/1651
 

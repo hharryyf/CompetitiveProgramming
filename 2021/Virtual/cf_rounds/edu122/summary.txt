@@ -1,0 +1,19 @@
+Did this practice with Tom and Edward. We solved 5/6 problems during this practice, I solved 3.
+
+A. Div. 7 [solved by me] (diff=800, login)
+Just manipulate the digit, we need to change at most 1.
+
+B. Minority [solved by Tom] (diff=800, login)
+The method he used during the contest was way too overkill. Just sweep from let to right, taks the max of the minority along the way is fine.
+
+C. Kill the Monster [solved by me] (diff=1100, simple math)
+Just a very simple math problem.
+
+D. Make Them Equal [solved by Edward] (diff=1600, simple dp)
+Just a simple knapsack dp, if we want to modify a number a[i], we definitely want to make it equal to b[i].
+Just precalculate the minimum step to increase from 1 to v, and run the knapsack dp.
+
+E. Spanning Tree Queries [solved by me] (diff=2400, kruskal, ad-hoc)
+Note that there are only C(M, 2) many critical points, the relative order of weights of the edges does not change between these critical points.
+We can run Kruskal C(M, 2) many times. https://codeforces.com/contest/1633/problem/E
+

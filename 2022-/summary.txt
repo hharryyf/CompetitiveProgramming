@@ -383,3 +383,14 @@ https://codeforces.com/contest/1205/problem/C
 88 - 91 Educational Codeforces Round 124  A - D
 https://codeforces.com/contest/1651
 
+92. Unmerge [solved] (diff=1800, dp)
+The observation is for a consecutive a[i], a[i+1], a[i+2], ...,a[j]. Unless there exists some k such that a[k] > a[i], these numbers must 
+all be in one of the sequences. Hence, we can partition the array into chunks and reduce the problem to a standard knapsack dp.
+https://codeforces.com/contest/1382/problem/D
+
+93. Yet Another Subarray Problem [solved] (diff=1900, dp, ad-hoc)
+https://codeforces.com/contest/1197/problem/D
+
+94. Yet Another Problem On a Subsequence [solved] (diff=1900, dp)
+Just define dp[i] as the number of sequences start at the ith element. https://codeforces.com/problemset/problem/1000/D
+

@@ -394,3 +394,6 @@ https://codeforces.com/contest/1197/problem/D
 94. Yet Another Problem On a Subsequence [solved] (diff=1900, dp)
 Just define dp[i] as the number of sequences start at the ith element. https://codeforces.com/problemset/problem/1000/D
 
+95. Catching Cheaters [solved] (diff=1800, dp)
+This problem is just a modification to the standard LCS. https://codeforces.com/problemset/problem/1446/B
+

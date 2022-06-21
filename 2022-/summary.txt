@@ -397,3 +397,19 @@ Just define dp[i] as the number of sequences start at the ith element. https://c
 95. Catching Cheaters [solved] (diff=1800, dp)
 This problem is just a modification to the standard LCS. https://codeforces.com/problemset/problem/1446/B
 
+96 - 99 Codeforces Round #802 (Div. 2) A - D https://codeforces.com/contest/1700
+
+100. Nauuo and Circle [solved] (diff=1900, tree dp)
+https://codeforces.com/contest/1173/problem/D
+
+101. Max Median [solved] (diff=2100, binary search)
+The idea is exactly the same as an IOI problem. We binary search on the final answer. See if the Median is greater than v. 
+To validate v, we set all numbers less than v to -1 and greater than v to be 1, we basically need to answer the question if we can 
+find a subarray of length at least K such that it's sum is greater than 0. This is a simple two-pointer problem and can be solved within O(N) time.
+Combine with the binary search, we basically find an O(NlogN) solution. https://codeforces.com/contest/1486/problem/D
+
+102. Minimax Problem [solved] (diff=2000, binary search, bitmask)
+Same as the previous problem, if we treat every number greater than or equal a threshold as 1, and a number less than the threshold as 0
+we need to just find two masks such that its or value is the full mask. https://codeforces.com/contest/1288/problem/D
+
+

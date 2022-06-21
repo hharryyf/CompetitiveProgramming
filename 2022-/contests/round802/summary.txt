@@ -1,0 +1,15 @@
+I didn't gain much from this round, because the problems are either too simple or disgusting. E and F have rating 2600 which are unsolvable for me
+during a 2h contest.
+
+A. Optimal Path [solved] (diff=800, login)
+
+B. Palindromic Numbers [solved] (diff=1100, login)
+Just use python, there are 2 cases one we let the target be 99...99, the other case is 11....11.
+
+C. Helping the Nature [solved] (diff=1700, construction)
+This problem is too weird. The intuition is given we have a fixed prefix x and the current number is y.
+If x > y we decrease the prefix to y, otherwise, we increase the suffix to x.
+
+D. River Locks [solved] (diff=1900, binary search, dp)
+The idea is to construct an array, what's the time we need to spend to fill all the containers if we have i pipes on.
+We need the following key observation: if we want to turn on i pipes, we should turn on the first i.

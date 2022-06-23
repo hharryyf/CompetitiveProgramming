@@ -427,9 +427,19 @@ https://codeforces.com/contest/1525/problem/E
 We can easily split the graph into 3 parts, these 3 parts are independent. For each part, we can firstly select K vertices for each color,
 and then pair up the vertices. https://codeforces.com/contest/869/problem/C
 
-106. Increasing Frequency [solved] (diff=1900, ad-hoc)
+106. Increasing Frequency [solved] (diff=2000, ad-hoc)
 We definitely can only target 1 number. Let's say we want to increase the value v in range [l, r] to c. The cost of doing this is occ([l, r], v) - occ([l, r], c).
 We want to maximize the cost. The idea is for each number v, we create a vector, which is for each position we put 1 and also the number of occurence 
 of c between it and the next occurence of v. The problem is just reduced to the maximum subarray problem which is simple.
 https://codeforces.com/contest/1082/problem/E
+
+107. Three Paths on a Tree [solved] (diff=2000, greedy, ad-hoc)
+We can observe that two points must be the endpoint of a diameter while the third point is the point that is furthest from this diameter.
+https://codeforces.com/contest/1294/problem/F
+
+108. Three Blocks Palindrome (hard version) [solved] (diff=1800, ad-hoc)
+We can manipulate x for each number, and for y it is simply the maximum occurence number within a range. Note that since a[i] is up to 100, 
+the maximum occurence number can be calculated using brute force, no need for Mo's algorithm or range tree. 
+https://codeforces.com/contest/1335/problem/E2
+
 

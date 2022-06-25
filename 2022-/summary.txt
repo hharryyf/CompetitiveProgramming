@@ -442,4 +442,61 @@ We can manipulate x for each number, and for y it is simply the maximum occurenc
 the maximum occurence number can be calculated using brute force, no need for Mo's algorithm or range tree. 
 https://codeforces.com/contest/1335/problem/E2
 
+109.  Interactive Treasure Hunt [solved] (diff=2200, ad-hoc)
+Firstly, it's difficult to do this using binary search because the query is 7, less than O(logn * logm)
+We can solve this problem using a set of linar equations.
+ask on (1, 1): x1 - 1 + x2 - 1 + y1 - 1 + y2 - 1 = r1
+x1 + x2 + y1 + y2 = r1 + 4 = c1
+ask on (n, 1): n - x1 + n - x2 + y1 - 1 + y2 - 1 = r2
+y1 + y2 - (x1 + x2) = r2 + 2 - 2 * n = c2
+after 2 queries we know x1 + x2 and y1 + y2
+x1 + x2 = (c1 - c2) / 2  --- (1)
+y1 + y2 = (c1 + c2) / 2  --- (2)
+we can ask at most 3 more queries before we guess the answer
+now we guess ((x1 + x2) / 2, 1)
+Then, y1 - 1 + y2 - 1 + (x1 + x2) / 2 - x1 + x2 - (x1 + x2) / 2 = r3 
+x2 - x1 = r3 + 2 - (y1 + y2) = r3 + 2 - (c1 + c2) / 2 --- (3)
+Hence, we can find x1 and x2 after this query
+similarly, we can get y1 and y2
+we query (1, (y1 + y2) / 2)
+x1 - 1 + x2 - 1 + (y1 + y2) / 2 - y1 + y2 - (y1 + y2) / 2 = r4
+Hence, (c1 - c2) / 2 + y2 - y1 = r4 + 2
+It means y2 - y1 = r4 + 2 - (c1 - c2) / 2 -- (4)
+However, at this point, we are not sure if it is (x1, y1) and (x2, y2) 
+or it should be (x1, y2) or (x2, y1)
+We just call dig (x1, y1) and see if it is there, it yes, then (x2, y2) is also correct -- (5, 6)
+otherwise, we just dig (x1, y2) and (x2, y1)  -- (5, 6, 7)
+
+110.  Connect the Points [solved] (diff=1800, ad-hoc)
+https://codeforces.com/contest/1666/problem/C
+
+111. Job Lookup [fail] (diff=2100, dp)
+We can easily classify this problem as an interval dp. We define dp(l, r) as the minimum contribution of all the points in range (l, r) 
+to the answer. Note that the difficult part is the distance between the points. We can However, deal with this issue in the following way.
+Suppose we are calculating the answer (l, r) and there's a splitting point k. Then, apparently dp(l, r) = dp(l, k - 1) + dp(k + !, r) + something.
+This "something" is actually the weight of the edge, we can set the edge as sum(c(i, j), i = l..r, j = {1..N} \ {l..r}).
+https://codeforces.com/contest/1666/problem/J
+
+112. The Hard Work of Paparazzi [solved] (diff=2000, dp)
+This problem can be solved with brute force dp. Note that when we do transition, we don't need to consider all previous states, only 
+states within t[i] - t[j] <= 2 * r. Because all other states can transite to the current state. https://codeforces.com/contest/1427/problem/C
+
+113. The Number of Pairs [solved] (diff=2100, ad-hoc)
+This is a very nice problem. 
+Let gcd(a, b) = g
+c * lcm(a,b) − d * gcd(a,b) = x
+a * b * c / g - d * g = x
+a * b * c = (x + d * g) * g
+a * b = (x + d * g) * g / c --> c | (x + d * g) * g   (1) 
+g * (a / g) * g * (b / g) = (x + d * g) * g / c
+(a / g) * (b / g) = (x + d * g) / (g * c) --> (g * c) | (x + d * g) (2)
+Let A = a / g, B = b / g, C = (x + d * g) / (g * c)
+Thus, we want to calculate how many gcd(A, B) = 1 such that A * B = C
+For each C, suppose it has K unique prime factors, then the number of pair A, B is simply 2 ^ K, we can use binary representation to 
+understand why such calculation is correct.
+For example,
+c=2, d=7, x=25
+g = 1, (x + d * g) / (g * c) = (25 + 7) / (1 * 2) = 16 --> 2
+g = 5, (x + d * g) / (g * c) = (25 + 7 * 5) / (5 * 2) = 6 --> 4
+g = 25, (x + d * g) / (g * c) = (25 + 7 * 25) / (25 * 2) = 4 --> 2
 

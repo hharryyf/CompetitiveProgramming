@@ -500,3 +500,24 @@ g = 1, (x + d * g) / (g * c) = (25 + 7) / (1 * 2) = 16 --> 2
 g = 5, (x + d * g) / (g * c) = (25 + 7 * 5) / (5 * 2) = 6 --> 4
 g = 25, (x + d * g) / (g * c) = (25 + 7 * 25) / (25 * 2) = 4 --> 2
 
+114. Odd-Even Subsequence [solved] (diff=2000, binary search, greedy)
+For this kind of question our first idea is always binary search. Let the binary search term be: is it possible to find a subsequence of length
+K such that the result of the calculation is no greater than V. To do the validation, we just greedily pick the numbers no greater than V,
+with the constraint that these numbers must have gap 1. https://codeforces.com/contest/1370/problem/D  
+
+115. Two Pizzas [solved] (diff=2100, bitmask, ad-hoc)
+This problem is similar to https://codeforces.com/contest/1288/problem/D
+We can find what's the minimum price for each mask and what are the two pizzas that can create this mask and price -- (1)
+After that for each mask, suppose it to be the final answer, we want to count how many people with exactly this mask -- (2)
+After that, we count for each mask, how many happy people, these are the pizzas with exactly this mask or a submask -- (3)
+https://codeforces.com/contest/1185/problem/F
+
+116. Playlist for Polycarp (hard version) [solved] (diff=2600, dp)
+We can breakdown this problem into stages: firstly, for i type-1 items, j type-2 items and k type-3 items, each item is different, how many 
+arrangements satisfy the adjacent item must be of different type. After this is solved, we can calculate how many ways of selecting songs 
+such that there are i type-1 items, j type-2 items, and k type-3 items such that the total time is T. Note that both parts can be solved 
+with knapsack dp. One remarks is how to do part 2, instead of design a state dp[i][j][k][T], we can seperate into 2 states 
+dp[i][j][T] as the number of ways to use i type-1 item and j type-2 items with total time T, and dp2[i][T] as the number of ways to 
+use i type-3 items with total time T. We can combine dp[i][j][T] and dp2[i][T] to calculate the answer for part 2.
+https://codeforces.com/contest/1185/problem/G2
+

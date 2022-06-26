@@ -521,3 +521,12 @@ dp[i][j][T] as the number of ways to use i type-1 item and j type-2 items with t
 use i type-3 items with total time T. We can combine dp[i][j][T] and dp2[i][T] to calculate the answer for part 2.
 https://codeforces.com/contest/1185/problem/G2
 
+117. K-periodic Garland [solved] (diff=1900, ad-hoc)
+Apparently, we can solve each starting point from 1 to K with a period of K seperately. 
+For each of the sequence with period K.
+Total cost = remove all 1 - save some 1 + change some 0 to 1
+Total cost = remove all 1 - (save some 1 - change some 0 to 1)
+Hence minimum cost = remove all 1 - maximum subarray after we change all 0 to -1.
+https://codeforces.com/contest/1353/problem/E
+
+

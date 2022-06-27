@@ -529,4 +529,10 @@ Total cost = remove all 1 - (save some 1 - change some 0 to 1)
 Hence minimum cost = remove all 1 - maximum subarray after we change all 0 to -1.
 https://codeforces.com/contest/1353/problem/E
 
+118. GCD Counting [solved] (diff=2000, ad-hoc)
+The idea is each number less than 2e5 has at most 6 unique prime factors. Then, we can manipulate each prime number between 2 and 2e5. 
+This would grant each number can only be calculated 6 times. For each prime number, the graph is changed into a forest. And the answer for 
+each prime number is the maximum diameter for each tree in the forest. Time complexity O(6 * N * log(N)), the log factor is from the binary search
+that uses to determine if an edge present in the graph. https://codeforces.com/contest/1101/problem/D
+
 

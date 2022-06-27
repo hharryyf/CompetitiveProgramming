@@ -535,4 +535,20 @@ This would grant each number can only be calculated 6 times. For each prime numb
 each prime number is the maximum diameter for each tree in the forest. Time complexity O(6 * N * log(N)), the log factor is from the binary search
 that uses to determine if an edge present in the graph. https://codeforces.com/contest/1101/problem/D
 
+119. Trucks and Cities [fail] (diff=2400, dp)
+We should realize the value C_i actually doesn't matter. Because as long as we solve the problem for [s, f, c=1, r] the answer is simply 
+the former answer times c_i. Now, we can use dp for this. Define dp[i][j][k] as  the minimum of the maximum gap when we have k refuels on
+inverval [a[i], a[j]], dp[i][j][k] = min(max(dp[i][pos][k-1], a[j] - a[pos])) Note that the optimal pos is monotone.
+Hence, we can use two pointers to find the optimal pos instead of always start from i. https://codeforces.com/contest/1101/problem/F
+
+120. Zero Remainder Sum [solved] (diff=2100, dp)
+We solve this problem in the following 2 stages:
+(1) For each row, find the maximum number we can get by selecting no more than m / 2 numbers
+such that the sum of these numbers mod j divided by K.
+The target is to create an array of <mod, maximum sum> for each row
+(2) after the array is created, we would solve the problem:
+each row, we can select at most one pair
+we want to calculate the maximum number we can achieve such that the sum of mod is divisable by K.
+Both parts are solvable by knapsack dp.
+https://codeforces.com/contest/1433/problem/F
 

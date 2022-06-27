@@ -1,7 +1,7 @@
 #pragma GCC optimize(3)
 #pragma GCC optimize(2)
 // #define D
-#define MAX_SIZE 200011
+#define MAX_SIZE 402
 #define BLOCK 450
 #ifdef D
 #define debug(...) fprintf(stderr, __VA_ARGS__)
@@ -54,7 +54,48 @@ ll gcd(ll n,ll m){
     return n==0?m:gcd(m%n,n);
 }
 
-int main() {
 
+const int inf = 1e9 + 7;
+int dp[MAX_SIZE][MAX_SIZE][MAX_SIZE];
+int a[MAX_SIZE];
+int N;
+
+int main() {
+    int i, j, k;
+    int Q;
+    scanf("%d%d", &N, &Q);
+    for (i = 1; i <= N; ++i) scanf("%d", &a[i]);
+    for (i = 1; i <= N; ++i) {
+        for (j = i; j <= N; ++j) {
+            if (i == j) continue;
+            for (k = 1; k <= N; ++k) {
+                dp[i][j][k] = inf;
+            }
+
+            dp[i][j][0] = a[j] - a[i]; 
+        }
+    }
+
+    for (k = 1; k <= N; ++k) {
+        for (i = 1; i <= N; ++i) {
+            int opt = i;
+            for (j = i + 1; j <= N; ++j) {
+                while (opt < j && max(dp[i][opt][k-1], a[j] - a[opt]) > max(dp[i][opt + 1][k-1], a[j] - a[opt + 1])) {
+                    opt++;
+                }
+
+                dp[i][j][k] = min(dp[i][j][k], max(dp[i][opt][k-1], a[j] - a[opt]));
+            }
+        }
+    }
+
+    ll ans = 0;
+    while (Q-- > 0) {
+        int s, f, c, r;
+        scanf("%d%d%d%d", &s, &f, &c, &r);
+        ans = max(ans, 1ll * dp[s][f][r] * c);
+    }
+
+    printf("%lld\n", ans);
     return 0;
 }

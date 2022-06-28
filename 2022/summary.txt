@@ -552,3 +552,23 @@ we want to calculate the maximum number we can achieve such that the sum of mod 
 Both parts are solvable by knapsack dp.
 https://codeforces.com/contest/1433/problem/F
 
+121. Not Quite Lee [solved] (diff=2000, ad-hoc, combinatorics)
+We can observe the following: each even number K controls K / 2 + p * K for a parameter p, each odd number controls p * K. 
+There are 2 observations: 
+(1) if the subsequence contains an odd number, we can always include it in the answer
+(2) Let's say the subsequence only contains even numbers, and the even number has the minimum lowest bit occurs even number of time,
+we can include it in the answer.
+This transforms the problem into a simple combinatorics problem. https://codeforces.com/contest/1610/problem/D
+
+122. Subsequences (easy & hard version) [solved] (diff=1900/2000, dp)
+We can calculate how many distinct subsequences has length i for each i from 1 to N, and pick these sequences greedily from longer to shorter.
+The dp definition is simple, dp[i][j] = number of subsequences end at i with length j.
+The transition is simply dp[i][j] = sum(dp[lst[k]][j-1], k = a..z)
+https://codeforces.com/contest/1183/problem/E
+
+123. Topforces Strikes Back [solved] (diff=2100, greedy)
+We first sort and unique the data. Then for each i, we iterate downward and find the first j (j < i) such that a[i] % a[j] != 0.
+After we get this j, we iterate downward to find the first k < j such that a[i] % a[k] != 0 and a[j] % a[k] != 0.
+Note that, the time complexity is correct, because the maximum iteration per number is at most 2 * D, here D is the maximum divisor 
+a number can have, and an upper bound is sqrt(2e5). https://codeforces.com/contest/1183/problem/F
+

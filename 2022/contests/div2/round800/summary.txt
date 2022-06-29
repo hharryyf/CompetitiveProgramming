@@ -1,0 +1,29 @@
+I don't want to recall this practice, too embarrassing...
+https://codeforces.com/contest/1694/problem/E
+
+A. Creep [solved by me] (diff=800, login)
+
+B.  Paranoid String [solved by Edward] (diff=1200, ad-hoc)
+This is the most embarrassing problem in 2 years. I think I've never failed to solve a 1200 problem before. The reason 
+for this was because I found a "counterexample" during the contest for the correct construction. The correct construction
+is just see if the last two bits is the same or not. The reason I found a "counterexample" was because I didn't use pen and paper.
+
+C. Directional Increase [solved by me] (diff=1300, greedy)
+This can be simply written as a set of linear equations, and we can solve it with greedy. However, after we decide 
+how many moves we move from i to i+1 and how many moves we move from i+1 to i for each i, we still need to check
+if (1) all of these moves are non-negative (2) if the the number of moves from i --> i + 1 is 0, there shouldn't 
+exist a move from j + 1 --> j (j >= i) that is strictly positive (3) similar to (2) but the case for i+1 --> i is 0.
+
+D. Fake Plastic Trees [solved by me & coded by Edward] (diff=1700, greedy)
+The idea is very simple, just solve the problem bottom up. For each leaf node, initially give it R[v]; 
+For internal nodes, if the sum of R[nv, nv \in child v] is greater than or equal to L[v], just return the min of the sum and R[v];
+Otherwise, we need to use an additional operation and return R[v]. 
+
+E. Keshi in Search of AmShZ [fail] (diff=2300, shortest path)
+The question is also quite embarrassing, beacuse about 2 years ago, I came across the CERC 2017 problem G which used exactly the same technique.
+The idea is we reverse the edges in the graph, let dist[N] = 0
+For each v, dist[v] = min(dist[nv] + 1 + number of points adjacent to v such that dist[u] >= dist[nv]). Note that this term can 
+be maintained dynamically. Firstly, we associate each node with its indegree in the reverse graph, let's call it deg[v]. 
+When we are doing the relax in dijkstra, we subtract 1 from deg[u] for all u that's adjacent to v (suppose v is the point we pop from the priority queue).
+This would ensure: (1) for dist[u] < dist[v] since u has already been visited by dijkstra, subtracting more from it would not affect the answer,
+(2) for dist[u] >= dist[v], the "1 + number of points adjacent to v such that dist[u] >= dist[nv]" is correctly updated as the current deg[u].

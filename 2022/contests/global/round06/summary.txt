@@ -1,0 +1,22 @@
+The global round is too hard, the gap between E and F is extremely large.
+
+A. Competitive Programmer [solved] (diff=1000, simple math)
+Just check if the sum of digit is divisible by 3, and the digit contains 0; after the 0 is removed, the number must 
+contains an even digit.
+
+B. Dice Tower [solved] (diff=1000, simple math)
+The only property we need to use is the sum of digit of the opposite face of the dice is 7.
+
+C. Diverse Matrix [solved] (diff=1400, ad-hoc)
+We should always construct an answer with optimal value of r + c. Note that only if N = M = 1 there's no solution.
+The construction is when N >= 2 and M >= 2, we put a[i][j] = i * (N + j); otherwise, we put (2....) if N = 1 or M = 1.
+
+D. Decreasing Debts [fail] (diff=2000, ad-hoc, greedy)
+This problem is very difficult, the idea is suppose i has in total owed a[i], and j has in total owed -a[j] (both a[i] > 0 and a[j] > 0).
+Note that by using the operations, it is always possible to cancel min(a[i], -a[j]) for a[i] and add the same about to a[j]. greedy
+matching would work. 
+
+E. Spaceship Solitaire [solved] (diff=2100, greedy)
+Each number i suppose there are K[i] milestones that has u = i, then, the minimum operation we need to use on the number is max(0, a[i] - K[i]).
+Note that there's always an permutation of operations that let this number to be satisfied for all i from 1 to N.
+Hence, just dynamically maintain the sum of max(0, a[i] - k[i]). 

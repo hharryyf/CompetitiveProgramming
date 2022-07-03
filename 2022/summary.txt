@@ -587,3 +587,15 @@ dist[x] = (deg[x] + sum(dist[y], such that dist[y] < dist[x])) / |{y | dist[y] <
 The last term can be maintained using the same technique as the one used in CF1694E. 
 https://codeforces.com/gym/101620/attachments/download/6377/20172018-acmicpc-central-europe-regional-contest-cerc-17-en.pdf
 
+130 - 134 Global round 6 A - E 
+https://codeforces.com/contest/1266
+
+135 - 139 Global round 16 A - E
+https://codeforces.com/contest/1566
+
+140 - 145 Educational Codeforces Round 111 
+https://codeforces.com/contest/1550
+
+146 - 150 Global round 21 A - E 
+https://codeforces.com/contest/1696
+

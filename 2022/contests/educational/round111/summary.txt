@@ -1,0 +1,35 @@
+Again, to avoid sadness, I did this practice in secrete mode. I can solve 4/6 problems in 2h. 
+https://codeforces.com/contest/1550/
+
+A. Find The Array [solved] (diff=800, login)
+
+B. Maximum Cost Deletion [solved] (diff=1000, greedy)
+Two cases, when b >= 0, just output a * n + b * n. Otherwise, we want to use the minimum number of steps to remove 
+everything. It is just simply count how many '0' components (#0) and '1' components (#1) and output a * n + b * (min(#0, #1) + 1).
+
+C. Manhattan Subarrays [solved] (diff=1700, brute force)
+If we draw a picture, we can easily see that for any 3 numbers in the subarray, as long as there exists i < j < k such that 
+a[i] <= a[j] <= a[k] or a[i] >= a[j] >= a[k], the subarray is bad. Thus, the longest subarray length cannot exceed 4. 
+Just use brute force, and check how many subarray ends at each index, add them all together, done.
+
+D. Excellent Arrays [fail] (diff=2300, combinatorics, ad-hoc) <-- actually much harder than E 
+Each number can be interpreted as i + k_i and k_i != 0
+The best arrangement is definitely half the number takes + k_i and the other half takes - k_i
+If the total elements is odd, we can half two possible ways one is n/2 takes + k_i, n - n / 2 take -k_i
+Or n/2 + 1 takes +k_i while n/2 takes -k_i
+
+E. Stringforces [solved] (diff=2500, binary search, bitmask dp)
+The problem is much simpler than D. The idea of binary search on final answer is very natrual. To validate mid, we can use dp.
+Define dp[mask] as the minimum right-end points such that all characters in "mask" have a consecutive length of at least mid.
+The check condition is just if dp[(1 << K) - 1] <= N. Now the only problem is how to validate what's the minimum right-end points 
+to make the subarray starts at i has at least mid consecutive character c. Note that we can do this with a preprocessing for each mid.
+
+F. Jumping Around [fail] (diff=2700, union find, Boruvka MST)
+The important property of MST algorithm is the order of joining edges won't affect the weight of the maximum weighted edge from 
+the a --> b path for any pair (a, b) in the resulted MST. With this property, we can try to build the MST and calculate what's the 
+minimum k require to travel from s --> other i. Here we use the Boruvka process. In each iteration, for each component, we iterate 
+through each point, and find the closest point that's not within the same component. 
+To do this, we can firstly erase all the points in the current component, and query the first point on the left of |a[i] +/- d| 
+and on the right of |a[i] +/- d|. After the query is done, we find the smallest weighted edge and add back all the points in the 
+current component. 
+

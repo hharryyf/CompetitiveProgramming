@@ -1,0 +1,20 @@
+While the first 3 problems are too simple and the problems start from F are undoable, we mainly review D and E.
+
+A. NIT orz! [solved by Tom] (diff=800, login)
+
+B. NIT Destroys the Universe [solved by me] (diff=900, casework)
+
+C. Fishingprince Plays With Array [solved by Tom] (diff=1400, implementation)
+
+D. Permutation Graph [solved by me] (diff=1900, data structure optimization, greedy)
+It is obvious that we can always go the the furthest reachable point. Suppose a[x] < a[x+1] (a[x] > a[x+1] is dual).
+We need to make sure we arrive at a point y such that min(a[x..y]) = a[x] and max(a[x..y]) = a[y].
+We let each point points to the first point on its right that is greater than the current point. To get the furthest point of x
+we consider the chain x --> p[x] --> p[p[x]], we only need to check if a[x] is sill the minimum in the range. This can be checked 
+with a sparse table. 
+
+E. Placing Jinas [solved by Tom] (diff=2000, combinatorics)
+I read the problem wrong in the contest. There's actually only 1 doll at position (0, 0). Hence, the problem is 
+quite simple, think what's the contribution of this doll to all white points. For a white point at (x, y)
+the contribution is C(x + y, x). The contribution to each row is hence sum(C(x + y, x), y = 0..a[x] - 1).
+Note that this term is equal to C(x + a[x], x + 1). 

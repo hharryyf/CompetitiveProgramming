@@ -1,0 +1,25 @@
+We ignore problem F because it is too difficult, I can solve 4/6 problems for this set.
+
+A. Construct a Rectangle [solved] (diff=800, login)
+There are only 2 cases: first, there exists two edges that sum up to be the third edge. Second,
+there exists an even edge while the other two edges have the same length.
+
+B. Berland Music [solved] (diff=1000, greedy)
+Suppose there are n0 '0' and n1 '1'. Then, we should assign 1 to n0 to '0's and n0+1 to N to '1's.
+How to permute the numbers in each group? It is simply match from small to large.
+
+C. Set or Decrease [solved] (diff=1600, greedy, ad-hoc)
+The observation is we only need to operate type-1 operation on the minimum number. And we only need to 
+operate it consecutively, then finish the process with consecutive type-2 operations. We can just manipulate 
+how many numbers involved in the type-2 operations from the largest number to the smallest number. The overall calculation
+is just a simple math problem.  
+
+D. Shuffle [fail] (diff=2000, combinatorics, ad-hoc)
+I failed to make any progress on this problem. The main issue is I don't know how to deal with duplications.
+However, the actual solution is not related to duplications. We just count how many strings that has there first 
+change position at i and last change position at j. How to count this is trivial. 
+
+E. Math Test [solved] (diff=2200, brute force, bitmask)
+Since n is small, we can manipulate the sign of x[i] - r[i]. For each problem, we count how many times 
+it occurs positively, sort it in descending order, and assign the permutation from M to 1. We just need to 
+pick the "mask" that has the maximum cost. 

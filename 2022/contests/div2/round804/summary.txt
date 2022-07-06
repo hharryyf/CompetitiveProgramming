@@ -1,0 +1,69 @@
+Did this practice with Edward, we discussed C and D together. Eventually, we solved 4/5 problems, which is good. 
+
+A. The Third Three Number Problem [solved by Edward] (diff-800, login)
+
+B. Almost Ternary Matrix [solved by me] (diff=900, construction)
+Note that these 2 patterns are important
+0 1
+1 0
+
+and,
+
+1 0
+0 1
+
+Just put the numbers in group of 2*2, with the following pattern.
+pattern 1 - pattern 2 - pattern 1 - ...
+|
+pattern 2 - pattern 1 - pattern 2 - ...
+
+C. The Third Problem [discussed together, coded by Edward] (diff=1700, ad-hoc)
+We try to fill the numbers from 0 to N. Suppose we are filling the number i, and for numbers from 0 to i - 1,
+the number occurs leftmost (resp. rightmost) in the original array has position L (resp. R). Then, if pos[i] is within
+range [L, R], then we can put i in any positions between [L, R] (note that there are already i positions occupied).
+Hence, we can times the answer by (R - L + 1 - i). Otherwise, if pos[i] < L or pos[i] > R, the position of number i is fixed.
+
+D. Almost Triple Deletions [discussed together, coded by me] (diff=2300, ad-hoc, dp)
+My initial observation is this problem can be splitted into 2 parts. 
+(1) For any subarray a[i,j] can we remove it completely with the given operation?
+(2) Once part (1) is solved, the problem is a simple dp question. Define dp[i] as the maximum length of equal elements we can 
+obtain when we only consider subarray a[1, i] and the ith element is the ending element. 
+For part (1), a critical observation is a subarray can be removed if and only if the subarray has even length and 
+the mode has frequency no more than half of the length. <-- Thanks to Ed for this observation...
+For part (2), we just let dp[i] = max(dp[j] + 1, a[j+1,i-1] can be removed). Note that not i can be the ending element, the subarray a[i+1,N]
+should be able to be removed if we want to take ans = max(ans, dp[i]).
+
+E. Three Days Grace [fail] (diff=2600, dp, line-sweep)
+This explaination is from the regional state of art. I think it's much better than my explaination.
+
+Let's say we fix in advance the minimum value in final multiset A (e.g, we say its 10) (in this case, obviously, all values in initial multiset must be at least 10). 
+Then, we want to minimise the maximum value in the final multiset. We do this independently for each value a[i].
+In particular, we want to write a[i] as a product of factors where all the factors are at least 10, and the maximum factor is as small as possible.
+We solve this using dp. 
+dp[x] = minimum possible maximum factor, if we write x as a product of factors where all the factors are at least 10. 
+As a recurrence for this dp, we consider each y >= 10 which is a factor of x, and let dp[x] = min(dp[x], max(y, dp[x/y]).
+This allows the dp to be done in overall O(m^2) if done naively, or O(m sqrt m) (because each value has at most sqrt factors) or even O(m log m)
+(because the total number of factors across the m numbers is bounded by O(m log m).
+Try to prove this - or if you want I can tell you the proof). 
+
+<-- My explaination to this is the proof is just the same as why SIEVE has complexity O(nlogn).
+
+This gives an O(m^2 log m) solution if we run the dp for each minimum value, which is obviously too slow.
+
+<-- Now the second part of his explaination is just we need to solve this problem using two pointers and when will the update event of 
+the dp value takes place. Note that the property is dp[i] will not increase during this procedure.
+
+Now, we wish to speed up the computation of this dp. Let the minimum value allowed be L.
+The key idea is that dp[x] doesn't change much when we decrease the minimum value allowed to L-1.
+In particular, if L-1 is not a factor of x, dp[x] does not change at all.
+If L-1 is a factor of x, then dp[x] might change.
+In particular, the new value of dp[x] = min(old value of dp[x], max(L-1, dp[x/(L-1)]). 
+So we start with L = m, and then iterate downwards .
+We update the value of dp[x] for all factors of L, and this gives an overall time complexity of O(m log m).
+
+<-- my comment to this problem:
+(1) The state of art is very strong, his problem solving level increased significantly since 2021.
+(2) This problem is a mix of sweeping and dp, the main procedure is actually something we are very familiar with, which is fixed the minimum,
+see what's the minimal maximum can be. However, the main difficulty is we can realize the dp value only needs to be updated for some specific values.
+
+

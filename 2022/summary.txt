@@ -599,6 +599,9 @@ https://codeforces.com/contest/1550
 146 - 150 Global round 21 A - E 
 https://codeforces.com/contest/1696
 
-151 - 155 Educational Codeforces Round 120
+151 - 155 Educational Codeforces Round 120 A - E
 https://codeforces.com/contest/1622
+
+156 - 160 Codeforces Round #804 (Div. 2)
+https://codeforces.com/contest/1699
 

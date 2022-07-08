@@ -1,7 +1,5 @@
-#pragma GCC optimize(3)
-#pragma GCC optimize(2)
 // #define D
-#define MAX_SIZE 524312
+#define MAX_SIZE 200011
 #define BLOCK 450
 #ifdef D
 #define debug(...) fprintf(stderr, __VA_ARGS__)
@@ -56,21 +54,43 @@ ll gcd(ll n,ll m){
 int main() {
     int T;
     scanf("%d", &T);
-
-    vector<ll> ret;
-    for (ll i = 3ll; i <= 100000ll; i = i + 2) {
-        ret.push_back(((i * i - 1) / 2 + 1));
-    }
-
     while (T-- > 0) {
-        ll N;
-        scanf("%lld", &N);
-        if (N < ret.front()) {
-            printf("0\n");
+        int N, i;
+        scanf("%d", &N);
+        vector<int> a(N);
+        if (N <= 8) {
+            for (i = 1; i <= N; ++i) {
+                a[i-1] = i;
+            }
         } else {
-            int idx = upper_bound(ret.begin(), ret.end(), N) - ret.begin();
-            // printf("%lld\n", ret[idx]);
-            printf("%d\n", idx);
+            for (i = 1; i <= N; ++i) {
+                a[i-1] = i;
+            }
+
+            a[0] = 3;
+            a[1] = 1;
+            a[2] = 2;
+        }
+
+        int cnt = 0;
+        while (cnt < N) {
+            bool ok = true;
+            for (i = 2; i < N; ++i) {
+                if (a[i] == a[i-1] + a[i-2]) {
+                    ok = false;
+                    break;
+                }
+            }
+
+            if (ok) {
+                for (auto v : a) {
+                    printf("%d ", v);
+                }
+                printf("\n");
+                cnt++;
+            }
+
+            next_permutation(a.begin(), a.end());
         }
     }
     return 0;

@@ -52,3 +52,23 @@ inline ll qpow(ll x,ll n){
 ll gcd(ll n,ll m){
     return n==0?m:gcd(m%n,n);
 }
+
+int main() {
+    int T;
+    scanf("%d", &T);
+    while (T-- > 0) {
+        ll N, K;
+        scanf("%lld%lld", &N, &K);
+        if (N % 2 == 0) {
+            printf("%lld\n", (K - 1) % N + 1);
+        } else {
+            // +2 every n / 2 rounds
+            ll round = (K - 1) / (N / 2);
+            ll rem = (K - 1) % (N / 2);
+            ll mv = round * (N / 2 + 1) + rem;
+            ll ret = mv % N + 1;
+            printf("%lld\n", ret); 
+        }
+    }
+    return 0;
+}

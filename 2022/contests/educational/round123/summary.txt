@@ -1,0 +1,26 @@
+I can solve 5/6 problems without any difficulty. https://codeforces.com/contest/1644
+
+A. Doors and Keys [solved] (diff=800, login)
+
+
+B. Anti-Fibonacci Permutation [solved] (diff=800, login)
+Just make sure when n >= 9, start the sequence with 3 1 2, when n < 8, just manipulate all permutations.
+
+
+C. Increase Subarray Sums [solved] (diff=1400, brute force)
+Just manipulate all subarray, and maintain the maximum subarray for each length i from 1 to N. 
+Next, greedily assign the x to the largest subarray.
+Finally, assign ans[i] = max(ans[i], ans[i-1]), which i is the sequence length. 
+
+
+D. Cross Coloring [solved] (diff=1700, ad-hoc)
+The answer is equal to K^|distinct color on board after all queries|. This transforms the problem to a data structure optimization problem.
+
+
+E. Expand the Path [solved] (diff=1900, range tree, line sweep)
+Note that each cell that can be visited without midifying the original sequence controls a rectangle on the board. The answer is equal to 
+the total area covered by the set of rectangles which can be solved by range tree and sweep. 
+
+
+F. Basis [fail] (diff=2900)
+This is too hard.

@@ -1,0 +1,33 @@
+I want to see how weak Edward was in 2021, but seems like this set is not as simple as I thought.
+I could solve 5 (compared to Edward who solved 4) problems without any difficulty, but the time I spent on C was a bit long. 
+F and G are too hard. 
+
+A. Arena [solved] (diff=800, login)
+
+B. Cat Cycle [solved] (diff=1200, pattern finding)
+When N is even, A and B would never meet. When N is odd, A and B would meet every n/2 moves.
+
+C. Minimum Ties [solved] (diff=1500, euler path)
+We let a win to be an outdegree, and a loss as an indegree. We can always construct an euler circuit such that each node in the graph
+has indegree = outdegree. When N is odd such thing is possible, however, when N is even, every node in the graph has odd degree. 
+However, if we do some analysis we would realize that when N is even, there must be at least N/2 ties. Hence, we can modify the 
+graph by eliminating edges (1, 2) (3, 4), ... (N-1, N) when N is even and run the euler path algorithm for that reduced graph
+while assigning (1, 2) (3, 4)... as tie.
+
+D. Pythagorean Triples [solved] (diff=1500, math, binary search)
+  c = a^2 - b
+  c^2 = a^2 + b^2
+  c^2 = c + b + b^2
+  c(c - 1) = b(b+1)
+  (c - b)(c + b) = (c + b)
+  (c - b - 1)(c + b) = 0
+  Thus, c = b + 1
+  a ^ 2 = 2 * b + 1
+We can iterate a from 3 to 1e5 (only odd numbers) and store (a^2 - 1) / 2 + 1 in a vector. When we process the queries,
+we just binary search how many numbers in the vector is no greater than n.
+
+E. Cheap Dinner [solved] (diff=2000, range tree, dp)
+This is the type of dp I'm most familiar with. I just can't understand why someone failed to solve the problem in contest :).
+
+
+

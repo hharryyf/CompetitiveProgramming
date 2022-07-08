@@ -89,7 +89,7 @@ int main () {
             // can be changed
             for (ll j = 1ll * i * i; j <= mx; j = j + i) {
                 if (occ[j]) visited[dp[j]]--;
-                dp[j] = min(dp[j], dp[j / i]);
+                dp[j] = min(dp[j], max(i, dp[j / i]));
                 if (occ[j]) visited[dp[j]]++;
             }
 

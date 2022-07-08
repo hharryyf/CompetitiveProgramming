@@ -1,7 +1,5 @@
-#pragma GCC optimize(3)
-#pragma GCC optimize(2)
 // #define D
-#define MAX_SIZE 524312
+#define MAX_SIZE 200011
 #define BLOCK 450
 #ifdef D
 #define debug(...) fprintf(stderr, __VA_ARGS__)
@@ -53,24 +51,22 @@ ll gcd(ll n,ll m){
     return n==0?m:gcd(m%n,n);
 }
 
+char s[9];
+map<char, int> pos;
+
 int main() {
     int T;
     scanf("%d", &T);
-
-    vector<ll> ret;
-    for (ll i = 3ll; i <= 100000ll; i = i + 2) {
-        ret.push_back(((i * i - 1) / 2 + 1));
-    }
-
     while (T-- > 0) {
-        ll N;
-        scanf("%lld", &N);
-        if (N < ret.front()) {
-            printf("0\n");
+        int i;
+        scanf("%s", s + 1);
+        pos.clear();
+        for (i = 1; i <= 6; ++i) pos[s[i]] = i;
+
+        if (pos['r'] < pos['R'] && pos['g'] < pos['G'] && pos['b'] < pos['B']) {
+            printf("YES\n");
         } else {
-            int idx = upper_bound(ret.begin(), ret.end(), N) - ret.begin();
-            // printf("%lld\n", ret[idx]);
-            printf("%d\n", idx);
+            printf("NO\n");
         }
     }
     return 0;

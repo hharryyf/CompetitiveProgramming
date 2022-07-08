@@ -605,3 +605,11 @@ https://codeforces.com/contest/1622
 156 - 160 Codeforces Round #804 (Div. 2)
 https://codeforces.com/contest/1699
 
+161 - 165 Educational Codeforces Round 104 A - E
+https://codeforces.com/contest/1487
+
+166. Xor-MST [I hate it!] (diff=2300, Boruvka)
+Note that the solution mentioned in the tutorial would get TLE, I hate this problem so much. Hence, I copied Edward's code 
+to save some time. https://codeforces.com/contest/888/problem/G
+
+167 - 171 Educational Codeforces Round 123 A - E

@@ -613,3 +613,9 @@ Note that the solution mentioned in the tutorial would get TLE, I hate this prob
 to save some time. https://codeforces.com/contest/888/problem/G
 
 167 - 171 Educational Codeforces Round 123 A - E
+https://codeforces.com/contest/1644
+
+172 - 177 Educational Codeforces Round 131
+A good set of problems but a horrible performance, thanks a lot Ed :(.
+https://codeforces.com/contest/1701
+

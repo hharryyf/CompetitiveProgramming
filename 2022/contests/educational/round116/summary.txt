@@ -1,0 +1,34 @@
+This educational round is one of the hardest I've ever seen. It's basically a dp + an ad-hoc D and E.
+Hence, I can only solve 3 problems within 2 hours :(. 
+
+A. AB Balance [solved] (diff=900, login)
+The only observation is there's at most 1 change. We can manipulate which position is changed. 
+
+B. Update Files [solved] (diff=1100, math)
+The observation is the increase of computers should follow the pattern 1->2 -> ... x such that x >= K 
+and then each time we increase x by K until we reach N.
+
+C. Banknotes [solved] (diff=1400, math)
+We can manipulate the digit (at most 18) from the highest order to lowest order, each time from 0 to 9.
+Initialize a string s = "9" * 18. For each digit, we stop for the smallest integer such that the modified s needs more than K step to finish.
+
+D. Red-Blue Matrix [solved after 2 hours] (diff=2400, ad-hoc)
+Let's say we want to cut at column i, then each row we actually only care the minimum/maximum to the left of col i and the minimum/maximum 
+to the right of col i. Let's say initially all rows are red, we want to assign some rows to blue one at a time.
+The following greedy strategy obviously works: we change the row with smaller min_prefix[:i] before the row with larger min_prefix[:i].
+How to validate if the current coloring is ok is simple, just use 4 multisets. 
+
+
+E. Arena [fail] (diff=2100, combinatorics, dp)
+The dp state definition is different from the editorial, I read the one in Ed's submission.
+We define dp[i][j] as the number of ways to set the health points such that each hero has health point within [1, i] and there are j heros alive.
+We can easily see that the base case is just dp[i][0] = 1 for all 1 <= i <= X.
+The transition would be from dp[pre][k] --> dp[i][j], such that k <= j.
+Note that when we have dp[i][j], in the current round there are j - 1 reduction in health points, therefore pre = max(0, i - (j-1)).
+Let's think how to transform dp[pre][k] --> dp[i][j]. There are C(j, j - k) ways to select with hero died, also for these heros 
+the loss of health point is i - pre. Thus, the way to assign the health point of these heros are (j-k)^(i-pre).
+Thus, dp[i][j] = sum(dp[pre][k] * power(j - k, i - pre) * C(j, j - k), k = 0..j).
+The answer is simply dp[X][N].
+
+F. Tree Queries [fail]
+Too hard...

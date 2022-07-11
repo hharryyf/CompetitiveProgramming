@@ -1,4 +1,4 @@
-The global round is too hard, the gap between E and F is extremely large.
+The global round is too hard, the gap between E and F is extremely large. I can solve 4 problems. 
 
 A. Competitive Programmer [solved] (diff=1000, simple math)
 Just check if the sum of digit is divisible by 3, and the digit contains 0; after the 0 is removed, the number must 

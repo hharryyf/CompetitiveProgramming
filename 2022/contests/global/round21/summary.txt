@@ -1,3 +1,4 @@
+This is a good practice, I solved 2 while Tom solved 3, we solved all the doable ones. 
 While the first 3 problems are too simple and the problems start from F are undoable, we mainly review D and E.
 
 A. NIT orz! [solved by Tom] (diff=800, login)

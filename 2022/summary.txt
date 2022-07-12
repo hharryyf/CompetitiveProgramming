@@ -622,3 +622,14 @@ https://codeforces.com/contest/1701
 178 - 182 Educational Codeforces Round 116 A - E 
 https://codeforces.com/contest/1606
 
+183. Lost Array [solved] (diff=2300, ad-hoc, shortest path)
+Since the question asks us to minimize the number of queries, we should use some optimization algorithms. We basically need to answer the 
+question what is the minimum number of steps to cover the array with K 1 such that each index is covered odd number of times.
+This question can be easily transformed into a graph shortest path problem. Each state (x, y) means suppose the array have x positions 
+covered even times, and y positions covered odd times, and we should immediately note that x + y = N. The shortest path is simply
+the path from (N, 0) --> (0, N). Quite simple, I'm pretty amazed Ed said this is a "hard" problem lol.  
+https://codeforces.com/contest/1534/problem/E
+
+184 - 188 Educational Codeforces Round 127 A - E
+https://codeforces.com/contest/1671
+

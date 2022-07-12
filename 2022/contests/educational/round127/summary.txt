@@ -1,0 +1,24 @@
+I can only solve 4/6 problems in this set. These problems are very annoying. For example D, I got wrong answer for 4 times,
+very easy to make mistakes. 
+
+A. String Building [solved] (diff=800, math)
+Just see if there's a connected component of characters of size 1.
+
+B. Consecutive Points Segment [solved] (diff=1000, brute force)
+We only need to consider 3 possibilities of the first position.
+
+C. Dolce Vita [solved] (diff=1200, greedy)
+We need to sort all the numbers in descending order. Then the answer is just several days we have n items,
+several days n-1 items ...
+
+D. Insert a Progression [solved] (diff=1600, ad-hoc)
+It's a very tricky one. We basically need to consider where we should place 1 (if the minimum in array a is greater than 1) and X
+(if the maximum in a is less than X). This can be done by sweeping and a multiset.
+
+E. Preorder [fail] (diff=2100, dp)
+The observation is we can group the prefix string into equivalent groups. To judge if two equivalent groups are equal, we just need to 
+see if the strings with the least lexicographical order are equal. We define dp[v] as the number of different strings at node v.
+Then if L[v] and R[v] are not equivalent. The answer to v is equal to dp[L[v]] * dp[R[v]] * 2. Otherwise, it is dp[L[v]] * dp[R[v]]. 
+
+F. Permutation Counting [fail] (diff=2700)
+To hard...

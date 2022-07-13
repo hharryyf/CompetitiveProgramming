@@ -633,3 +633,13 @@ https://codeforces.com/contest/1534/problem/E
 184 - 188 Educational Codeforces Round 127 A - E
 https://codeforces.com/contest/1671
 
+189 - 193 Educational Codeforces Round 121 A - E
+https://codeforces.com/contest/1626
+
+194. The Strongest Build [solved] (diff=2000, brute force)
+The idea is very similar to https://codeforces.com/contest/1637/problem/E. 
+https://codeforces.com/contest/1574/problem/D
+
+195. Inconvenient Pairs [solved] (diff=1900, binary search)
+To make the implementation easier, we should compress the coordinate. https://codeforces.com/contest/1569/problem/D
+

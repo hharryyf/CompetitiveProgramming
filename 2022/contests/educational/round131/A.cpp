@@ -1,75 +1,86 @@
+/* Edward's code */
 #pragma GCC optimize(3)
 #pragma GCC optimize(2)
-// #define D
-#define MAX_SIZE 524312
-#define BLOCK 450
-#ifdef D
-#define debug(...) fprintf(stderr, __VA_ARGS__)
-#else
-#define debug(...)
-#endif
-#include <cstdio>
-#include <iostream>
-#include <algorithm>
-#include <cstring>
-#include <vector>
-#include <array>
-#include <set>
-#include <queue>
-#include <cassert>
-#include <cmath>
-#include <map>
-#include <unordered_map>
-#include <random>
-#include <unordered_set>
-#define LEFT (index<<1)
-#define RIGHT ((index<<1)|1)
-#define MID ((l+r)>>1)
+#include <bits/stdc++.h>
+#define x first
+#define y second
+#define debug if(0)
+#define DEBUG(x) std::cerr << #x << '=' << x << std::endl
+#define FOR(i,a,b) for(int i=a;i<=b;++i)
 using namespace std;
 typedef long long ll;
- 
-const ll mod = 1e9 + 7;
- 
+typedef pair<ll , ll> pll;
+typedef pair<int , int> pii;
+typedef long double ld;
+const int maxv = 1e6 + 10;
+const int maxn = 5e5 + 10;
+const int inf32 = 1e9 + 5;
+const ll inf64 = 1e18 + 10;
+const ll mod=1e9+7;
+mt19937_64 gen(chrono::steady_clock::now().time_since_epoch().count());
+ll read(){
+	bool minus=false;
+	ll result=0;
+	char ch;
+	ch=getchar();
+	while(true){
+		if(ch=='-')break;
+		if(ch>='0'&&ch<='9')break;
+		ch=getchar();
+	}
+	if(ch == '-')minus=true;
+    else result=ch-'0';
+	while(true){
+		ch=getchar();
+		if(ch<'0'||ch>'9')break;
+		result=result*10+(ch-'0');
+	}
+	if(minus)
+		return -result;
+	else
+		return result;
+}
 inline ll add(ll x,ll y){
-    return ((x + y) % mod + mod) % mod;
-}
- 
-inline ll mul(ll x,ll y){
-    return x * y % mod;
-}
- 
-inline ll qpow(ll x,ll n){
-    ll ret= 1;
-    while(n > 0){
-        if(n & 1) ret = mul(ret, x);
-        x = mul(x, x);
-        n >>= 1;
+    ll ans=x+y;
+    if(ans>=mod){
+        ans-=mod;
     }
- 
+    return ans;
+    //return ((x+y)%mod+mod)%mod;
+}
+inline ll mul(ll x,ll y){
+    return x*y%mod;
+}
+inline ll qpow(ll x,ll n){
+    ll ret=1ll;
+    while(n){
+        if(n&1)ret=mul(ret,x);
+        x=mul(x,x);
+        n>>=1;
+    }
     return ret;
 }
- 
 ll gcd(ll n,ll m){
     return n==0?m:gcd(m%n,n);
 }
- 
-ll fac[MAX_SIZE], ifac[MAX_SIZE];
- 
-void init_1() {
-    int i;
-    fac[0] = ifac[0] = 1;
-    for (i = 1 ; i < MAX_SIZE; ++i) {
-        fac[i] = mul(fac[i-1], i);
-        ifac[i] = mul(ifac[i-1], qpow(i, mod - 2));
+ll lcm(ll n,ll m){
+    return n*m/gcd(n,m);
+}
+int main(){
+    ios_base::sync_with_stdio(false); 
+    cin.tie(0); 
+    cout.tie(0);
+    int t;
+    cin>>t;
+    while(t--){
+        vector<vector<int>>a(2,vector<int>(2));
+        int cnt=0;
+        for(int i=0;i<2;++i)for(int j=0;j<2;++j){
+            cin>>a[i][j];
+            cnt+=a[i][j];
+        }
+        if(cnt==0)cout<<0<<endl;
+        else if(cnt<4)cout<<1<<endl;
+        else cout<<2<<endl;
     }
-}
- 
-ll C(int n, int k) {
-    if (n < k) return 0;
-    return mul(fac[n], mul(ifac[n-k], ifac[k]));
-}
-
-int main() {
-
-    return 0;
-}
+}   

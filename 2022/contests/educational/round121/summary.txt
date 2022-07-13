@@ -1,0 +1,36 @@
+I can solve 4/6 problems within 2 hours in this set.
+E is doable, but since I spent too much time on D, I run out of time. F is too hard.
+
+A. Equidistant Letters [solved] (diff=800, login)
+Just sort the characters.
+
+B. Minor Reduction [solved] (diff=1100, math)
+There are only two cases. (1) There exists some i and i+1 such that a[i] + a[i+1] >= 10
+We need to change the last occurence of such i and i + 1.
+(2) If no such i, Just change a[1] and a[2] to a[1] + a[2]
+
+C. Monsters And Spells [solved] (diff=1700, dp)
+Apparently this is a dp problem. We define dp[i] as the minimum cost to finish all the monsters before index i.
+Then dp[i] = (cost(j + 1, i) * (cost(j + 1, i) + 1) / 2 + dp[j], j = 0.. i - 1). How to calculate cost(l, r) is simple, it is defined as 
+the minimum cost we need to spend on the monster r such that all monsters between l and r can be destroyed without a restart. 
+This can be calculated easily with another dp.
+
+D. Martial Arts Tournament [solved] (diff=2100, line sweep)
+The idea is for each number i between 0 and N + 4 (we add 4 here to avoid boundary cases), 
+calculate the maximum index j it can extend to such that pre[j] - pre[i-1] <= (1 << K) for each K between 0 to 18.
+For each testcase, we manipulate the i from 0 to 18 and j from 0 to 18, make use of the result we calculated in the previous part.
+Then, we know what's the minimum power of 2 (let's say 1 << k) we need to put for the last part. The total number of additions given i, j, 
+and the derived k is (1 << i) + (1 << j) + (1 << k) - N. The final answer is the minimum of such expression.
+
+E. Black and White Tree [fail] (diff=2400, ad-hoc)
+This problem is quite difficult to do casework. Let's say a white point x can move closer to some black points without getting pulled back.
+This move close only happens if the edge (x, y) satisfies one of the following property:
+(1) y is black
+(2) the connected component y locates (after we disconnect x, y) has at least 2 black points.
+Hence, we can build a directed graph with edges as all the edges that the points can move along without getting pulled back. 
+If we reverse all the edges in the directed graph and do a multi source BFS from the black points, all the visited points form the solution.
+
+
+F. A Random Code Problem [fail] (diff=2800)
+Too hard...
+

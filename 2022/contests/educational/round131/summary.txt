@@ -5,24 +5,24 @@ I lost all trust in someone's implementation skill after this practice ANGRY!!!
 Contest link:
 https://codeforces.com/contest/1701
 
-A. Grass Field [solved by Edward] (diff=?, login)
+A. Grass Field [solved by Edward] (diff=800, login)
 
-B. Permutation [solved by me] (diff=?,login)
+B. Permutation [solved by me] (diff=800,login)
 Just let d = 2, and greedily construct.
 
-C. Schedule Management [solved by Edward] (diff=?, binary search on final answer, greedy)
+C. Schedule Management [solved by Edward] (diff=1400, binary search on final answer, greedy)
 We must realize each task is only specialized by 1 person. We can binary search on the task completion time T.
 To validate, we use the greedy strategy, let each individual complete as many as specialized task as possible,
 to ensure this individual does not exceed the overall T. 
 
-D. Permutation Restoration [solved by me] (diff=?, greedy, ad-hoc)
+D. Permutation Restoration [solved by me] (diff=1900, greedy, ad-hoc)
 Firstly, we can find for each position what's the range of number can fit. Once we get this range, we can 
 transform the problem into the following, despite we need to print out the reverse Permutation.
 Give 1 to n, each number must sit in position [L[i], R[i]], output a suitable permutation. Note that the 
 technique was covered in CF1348F, just use line sweep and always pick the number with the smallest right bound.
 
-E. Text Editor [fail in contest, solved afterward by me] (diff=?, greedy, dp)
-In the contest I have the following observation (I have to stress that everything!!!):
+E. Text Editor [fail in contest, solved afterward by me] (diff=2500, greedy, dp)
+In the contest I have the following observation (I have to stress that everything below is my idea!!!):
 (1) For an optimal strategy, we always remove a suffix by the backspace/move back operation, then jump to the 
 front, and remove some prefix by the forward + backspace operation. Note that one special case we need to consider
 is the operation only contains remove suffix by backspace/move backward operation.
@@ -40,7 +40,7 @@ The most stupid dicision for me is to ask Edward implement this question, becaus
 be true before 2021 but not now. He messed up with the base cases, and we failed to pass the sample test case for an hour :(. 
 If I had implemented the question, we would surely have solved this problem.  
 
-F. Points [fail] (diff=?, data structure, matrices)
+F. Points [fail] (diff=2500, data structure, matrices)
 This is a very difficult question. We should easily understand that if c(i) be the total number of points k on the right of index i such that 
 i + d <= k. Then, the answer to each query is just sum(c(i) * (c(i) - 1) / 2, i = 1..200000) (here we use 1 <= a[i] <= 200000).
 We need to think how this value can be maintained.

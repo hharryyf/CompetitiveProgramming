@@ -643,3 +643,11 @@ https://codeforces.com/contest/1574/problem/D
 195. Inconvenient Pairs [solved] (diff=1900, binary search)
 To make the implementation easier, we should compress the coordinate. https://codeforces.com/contest/1569/problem/D
 
+196. A-Z Graph [solved] (diff=2400, ad-hoc)
+If we draw some diagram, we should realize there are only 2 cases, K is even and K is odd.
+If K is odd, as long as there exists <u, v> and <v, u> as edges for any u != v, the result for the query should be yes.
+If K is even, it is not hard to realize that there must be at least one edge along the path such that the character on <u, v> 
+is equal to the character on <v, u>. Note that this is actually the if and only if condition for K is even.
+Hence, what we need to do is just use two sets to maintain these information. Quite amazed the rating of this problem is 2400.
+https://codeforces.com/contest/1494/problem/E
+

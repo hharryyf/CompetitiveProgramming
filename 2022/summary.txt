@@ -651,3 +651,15 @@ is equal to the character on <v, u>. Note that this is actually the if and only 
 Hence, what we need to do is just use two sets to maintain these information. Quite amazed the rating of this problem is 2400.
 https://codeforces.com/contest/1494/problem/E
 
+197. Dogeforces [solved] (diff=2300, kruskal tree)
+The construction is exactly the same as the construction of the kruskal tree. We sort the edges according to weights in ascending order.
+Then, we only need to face 3 cases:
+(1) the new edge weight w is greater than the weight of the ancestor of a and the weight of the ancestor of b,
+in this case we add ans(a)-->++K and ans(b)--> ++K, and wt[K] = w 
+(2) the new edge weight w is equal to the weight of ans(a), in this case we add an edge ans(b) --> ans(a)
+(3) similar to (2) but weight w is equal to the weight of ans(b), add ans(a) --> ans(b).
+https://codeforces.com/contest/1494/problem/D
+
+198 - 202 Codeforces Round #803 (Div. 2) A - E 
+https://codeforces.com/contest/1698
+

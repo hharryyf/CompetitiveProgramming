@@ -1,0 +1,26 @@
+We solved 4 problems. But unlike previous time that problem E was very doable, this time E looks very hard.
+https://codeforces.com/contest/1698
+
+A. XOR Mixup [solved by me] (diff=800, login)
+Just output any number in the array 
+
+B. Rising Sand [solved by Edward] (diff=800, ad-hoc)
+The idea is when K is greater than 1, such operation is useless.
+
+C. 3SUM Closure [solved by me] (diff=1300, brute force)
+Note that if there are more than 2 positive numbers or more than 2 negative numbers, the answer is definitely no.
+When there are more than 3 zeros, we can just save 3 zeros. Hence, we can reduce the number of elements to at most 7, and 
+just do a brute force. 
+
+D. Fixed Point Guessing [solved by me] (diff=1600, binary search)
+The idea is for an array [l, r] once we know which elements are inside, there are some elements belong to [l, r] and some does not.
+If we count the total number of elements in subarray a[l, r] that's within range [l, r] and the number is even, then we definitely know 
+the answer is not in [l, r]; otherwise, the answer is in [l, r]. With this observation, we can binary search. 
+
+E. PermutationForces II [fail] (diff=2300, ad-hoc)
+The idea is each -1 can only be filled with numbers in range [a[i] - s, N]. We can also interpret it as the total numbers greater than or equal to 
+a[i] - s such that it has not appeared in the array b. This would transform into a very classic combinatorics problem. 
+One takeaway is the classic combinatorics does not have a trivial solution for arbitary l, r. If has solution only if all l are 1 or all r are N. 
+
+
+

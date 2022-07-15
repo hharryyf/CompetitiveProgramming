@@ -663,3 +663,9 @@ https://codeforces.com/contest/1494/problem/D
 198 - 202 Codeforces Round #803 (Div. 2) A - E 
 https://codeforces.com/contest/1698
 
+203. 1D Sokoban [solved] (diff=1900, binary search, sweep)
+There are two observations: (1) we can solve the left side and right side seperately
+(2) for the x > 0 (resp. x < 0) part, it is always optimal to push the leftmost (resp. rightmost) box to a special position.
+https://codeforces.com/contest/1494/problem/C
+
+

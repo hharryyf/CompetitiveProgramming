@@ -668,4 +668,7 @@ There are two observations: (1) we can solve the left side and right side sepera
 (2) for the x > 0 (resp. x < 0) part, it is always optimal to push the leftmost (resp. rightmost) box to a special position.
 https://codeforces.com/contest/1494/problem/C
 
+204. GCD of an Array [solved] (diff=2100, data structure, SIEVE)
+This problem is quite standard, we just need to consider each prime number seperately.
+https://codeforces.com/problemset/problem/1493/D
 

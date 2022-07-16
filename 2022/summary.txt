@@ -672,3 +672,28 @@ https://codeforces.com/contest/1494/problem/C
 This problem is quite standard, we just need to consider each prime number seperately.
 https://codeforces.com/problemset/problem/1493/D
 
+205. MinimizOR [solved] (diff=2500, data structure, ad-hoc)
+It is not hard to see that only some of the smallest elements would affect the final answer. Thus, the solution is for each range,
+we extract the first 31 smallest numbers and calculate the answer using brute force. 
+https://codeforces.com/contest/1665/problem/E
+
+206. GCD Guess [solved] (diff=2000, Chinese remainder theorem)
+An intuition is the prime numbers below 30 has a product of 6e9 which is greater than 1e9. Thus, we can select prime numbers 
+5, 7, 11, 13, 17, 19, 23, 29. And query things like i, i + shift which shift = lcm(5, 7, 11, 13, 17, 19, 23, 29, and i ranges from 1 to 29.
+Then, for each of the prime numbers, we can get at least once such that p | gcd(i, i + shift). Then, we know what's the remainder of 
+x / p. With these information, we can use Chinese remainder theorem to solve x mod shift which is exactly x in this case. 
+https://codeforces.com/contest/1665/problem/D
+
+207. Frequency Queries [solved] (diff=2400, range tree, line sweep)
+This is the kind of problems I'm most familiar with. We process the queries in dfs order offline. Now we need to design a data structure 
+that supports the following operations:
+(1) increment/decremenent the frequency of a number by 1
+(2) extract any number with a given frequency 
+(3) calculate what frequency is the kth smallest frequency (note that the frequency can have duplicates).
+These can be solved easily by a range tree and some sets/maps. Ideas on how to maintain such information 
+can be found https://codeforces.com/contest/1354/problem/D.
+
+https://codeforces.com/contest/1591/problem/E
+
+
+

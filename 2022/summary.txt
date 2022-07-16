@@ -695,5 +695,9 @@ can be found https://codeforces.com/contest/1354/problem/D.
 
 https://codeforces.com/contest/1591/problem/E
 
+208. Mark and Professor Koro [solved]
+This problem is very simple, but unfortunately someone failed to solve it in a 2h contest. I'm just amazed LOL.
+https://codeforces.com/contest/1705/problem/E
+
 
 

@@ -695,9 +695,37 @@ can be found https://codeforces.com/contest/1354/problem/D.
 
 https://codeforces.com/contest/1591/problem/E
 
-208. Mark and Professor Koro [solved]
+208. Mark and Professor Koro [solved] (range tree)
 This problem is very simple, but unfortunately someone failed to solve it in a 2h contest. I'm just amazed LOL.
 https://codeforces.com/contest/1705/problem/E
 
+209. Pchelyonok and Segments [solved] (diff=2000, dp, brute force)
+We define dp[i][j] as the maximum sum of the first segment (its length is j) such that we only consider subarray [i, N].
+Note that for this question only 1 <= j <= 2 * sqrt(N) needs to be considered. Hence, we obtain an algorithm with time/space complexity 
+of O(N^1.5). https://codeforces.com/contest/1582/problem/E
 
+210. Korney Korneevich and XOR (easy version) [solved] (diff=1800, dp)
+The idea is we define dp[i][j] as the minimum of the last element if we only consume the subarray a[1, i] and the xor value 
+of the subsequence is j. https://codeforces.com/contest/1582/problem/F1 
+
+211. Korney Korneevich and XOR (hard version) [fail] (diff=2400, brute force)
+This is a really smart problem. Note that in the easy version we should identify that we only care the final element of some subsequence
+such that the xor value is equal to a certain number. For this part, we basically need to optimize this observation.
+We maintain a vector for each number x, such that g[x] stores all the xor value that can be obtained with the ending element is no more than x. 
+We also maintain mn[x], which means what's the smallest ending element such that there exists an increasing subsequence with xor value x.
+https://codeforces.com/contest/1582/problem/F2
+
+212. Useful Edges [solved] (diff=2400, brute force)
+The question is asking us to count pair i, j such that for some u, v
+    dist(u, i) + w(i, j) + dist(j, v) <= L(u, v)
+If we rearrange the inequality, we get 
+    w(i, j) + dist(j, v) <= L(u, v) - dist(u, i) = P(v, i) for some u
+Note that the 2-d array P can be calculated in O(N^3).
+After the array P is derived, we can iterate through i, j, v see if there exists w(i, j) + dist(j, v) <= P(v, i) for each i, j.
+https://codeforces.com/contest/1484/problem/F
+
+
+213. Playlist [solved] (diff=1900, implementation, data structure optimization)
+We just need to simulate the process. We can use a linked list and a set of pairs to speed up the simulation. 
+https://codeforces.com/contest/1484/problem/D
 

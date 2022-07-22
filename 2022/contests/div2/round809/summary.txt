@@ -1,17 +1,17 @@
 This is an amazing round, we (I) cleared out all problems. 
 https://codeforces.com/contest/1706
 
-A. Another String Minimization Problem [solved by Edward] (diff=?, login)
+A. Another String Minimization Problem [solved by Edward] (diff=800, login)
 
-B. Making Towers [solved by me] (diff=?, login, ad-hoc)
+B. Making Towers [solved by me] (diff=1100, login, ad-hoc)
 The observation is we can solve each number seperately, only the parity of the position of the number matters.
 We just need to select a sequence of positions such that the parity of adjacent position is different, just greedily select.
 
-C. Qpwoeirut And The City [solved by me] (diff=?, greedy)
+C. Qpwoeirut And The City [solved by me] (diff=1400, greedy)
 If N is odd, the answer is fixed, we just need to make everything at even positions cool. 
 If N is even, the cool positions are made up of a prefix of even positions and a suffix of odd positions, just manipulate the seperation point.
 
-D1 + D2. Chopping Carrots [full problem solved by me] (diff=?, brute force)
+D1 + D2. Chopping Carrots [full problem solved by me] (diff=2400, brute force)
 I solved the harder version, which is actually a superset of the easier version. One critical property for floor(N/i) is
 there are at most 2 * sqrt(N) many distinct quotients. Thus for each a[i], only 2 * sqrt(a[i]) quotients exist.
 We target for an O(N * sqrt(max(a[i]))) solution. We define array mx[v] as the minimum possible maximum value such that we know the 
@@ -25,7 +25,7 @@ With these two observations, we can build the mx array by iterating over each of
 we can fill the position of v such that v is not a possible quotient for any of the numbers. 
 The answer is simply minimum of mx[i] - i, for 1 <= i <= a[1].
 
-E. Qpwoeirut and Vertices [solved by me] (diff=?, kruskal tree, LCA, sparse table)
+E. Qpwoeirut and Vertices [solved by me] (diff=2300, kruskal tree, LCA, sparse table)
 The observation is if we construct the kruskal tree and set the weight of the ith edges as i. Then, the answer to the query 
 is simply the weight of the node v such that v = LCA(l, l+1, ..., r). Note that to calculate the LCA of a set of nodes,
 we can just query the LCA of the node with the least dfs order and the node with the greatest dfs order. 

@@ -748,3 +748,30 @@ https://codeforces.com/contest/1554/problem/D
 216 - 220 Codeforces Round #809 (Div. 2)
 https://codeforces.com/contest/1706
 
+221. Difference Array [solved] (diff=1900, brute force)
+The brute force solution works. The only case we need to consider is to maintain the number of 0s seperately. 
+https://codeforces.com/contest/1707/problem/B
+
+222. Square-free division (hard version) [fail] (diff=2500, dp, SIEVE)
+The most important takeaway from this question is there's a method of only using O(N) memory to implement SIEVE 
+such that we can do prime factorization afterward. 
+https://codeforces.com/contest/1497/problem/E2
+
+223. Divan and Kostomuksha (easy version) [solved] (diff=2100, dp, SIEVE)
+This problem uses the dp technique we've met in https://codeforces.com/contest/1699/problem/E
+Define dp[i] as the maximum gcd sum we can get by using numbers of multiples of i.
+We iterate the numbers downward from max to 1. Then, dp[i] = max(dp[j] + （cnt[i] - cnt[j]) * i) here cnt[i] refers to the total number 
+that is a multiple of i. https://codeforces.com/contest/1614/problem/D1
+
+224. Mark and Lightbulbs [fail] (diff=1800, ad-hoc)
+The difficulty of the problem is the invariant of the operation. We should observe that the invariant of the operation is the first/last 
+characters are preserved and the xor of adjacent elements are preserved as well. 
+https://codeforces.com/contest/1705/problem/D
+
+225. Divan and a Cottage [solved] (diff=2600, dynamically allocated range tree)
+Let's construct a range tree, each leaf represents what's the answer to the question if the starting temprature before day 1 is i
+for each i between 0 ~ 1e9. Then, for each new Ti, we need to add 1 to [1, TL], and subtract 1 to [TR, 1e9]. Here TL means the 
+rightmost element such that the value for TL is less than Ti, similar definition for TR. Note that this uses the observation: 
+the answer for a specific day cannot decrease when the starting temprature decrease.
+https://codeforces.com/contest/1614/problem/E
+

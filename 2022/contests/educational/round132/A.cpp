@@ -84,7 +84,27 @@ ll extented_crt(vector<ll> m , vector<ll> r){
     return R > 0 ? R : R + MM;
 }
 
-int main() {
+int a[4];
 
+int main() {
+    int T;
+    scanf("%d", &T);
+    while (T-- > 0) {
+        int N;
+        scanf("%d", &N);
+        scanf("%d%d%d", &a[1], &a[2], &a[3]);
+        set<int> st;
+        st.insert(N);
+        int i, j;
+        for (i = 0 ; i < 3; ++i) {
+            for (j = 1; j <= 3; ++j) {
+                if (st.find(j) != st.end()) {
+                    if (a[j] != 0) st.insert(a[j]);
+                }
+            }
+        }
+
+        printf("%s\n", (int) st.size() == 3 ? "YES" : "NO");
+    }
     return 0;
 }

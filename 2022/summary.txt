@@ -775,3 +775,6 @@ rightmost element such that the value for TL is less than Ti, similar definition
 the answer for a specific day cannot decrease when the starting temprature decrease.
 https://codeforces.com/contest/1614/problem/E
 
+226 - 230 Educational Codeforces Round 132 A - E 
+https://codeforces.com/contest/1709
+

@@ -84,7 +84,82 @@ ll extented_crt(vector<ll> m , vector<ll> r){
     return R > 0 ? R : R + MM;
 }
 
-int main() {
+char s[MAX_SIZE];
+char t[MAX_SIZE];
 
+int main() {
+    int T, N;
+    scanf("%d", &T);
+    while (T-- > 0) {
+        int i, l = 0, r = 0;
+        scanf("%s", s + 1);
+        N = strlen(s + 1);
+        for (i = 1; i <= N; ++i) {
+            if (s[i] == '(') l++;
+            if (s[i] == ')') r++;
+        }
+        t[N + 1] = '\0';
+
+        int lb = N / 2 - l, rb = N / 2 - r;
+        if (lb == 0 || rb == 0) {
+            printf("YES\n");
+            continue;
+        }
+
+        int tlb = lb, trb = rb;
+
+        for (i = 1; i <= N; ++i) t[i] = s[i];
+
+        for (i = 1; i <= N && tlb > 0; ++i) {
+            if (s[i] == '?') {
+                t[i] = '(';
+                tlb--;
+            }
+        }
+
+        for (i = 1; i <= N && trb > 0; ++i) {
+            if (s[i] == '?' && t[i] == '?') {
+                t[i] = ')';
+                trb--;
+            }
+        }
+
+        int lstl = 0, lstr = 0;
+        for (i = 1; i <= N; ++i) {
+            if (s[i] == '?' && t[i] == '(') {
+                lstl = i;
+            }
+        }
+
+        for (i = N; i >= 1; --i) {
+            if (s[i] == '?' && t[i] == ')') {
+                lstr = i;
+            }
+        }
+
+        swap(t[lstl], t[lstr]);
+        //printf("%s\n", s + 1);
+        //printf("%s\n", t + 1);
+
+        int sm = 0;
+        bool ok = true;
+        for (i = 1; i <= N; ++i) {
+            if (t[i] == '(') sm++;
+            else {
+                sm--;
+            }
+
+            if (sm < 0) {
+                ok = false;
+                break;
+            }
+        }
+
+        if (ok) {
+            printf("NO\n");
+        } else {
+            printf("YES\n");
+        }
+    }
     return 0;
 }

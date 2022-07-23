@@ -84,7 +84,99 @@ ll extented_crt(vector<ll> m , vector<ll> r){
     return R > 0 ? R : R + MM;
 }
 
-int main() {
+/*
+    xor(x, y) = pref[x] ^ pref[y] ^ a[LCA(x, y)]
+*/
 
+int f[MAX_SIZE];
+
+set<int> st[MAX_SIZE];
+
+int find(int x) {
+    if (f[x] == x) return x;
+    return f[x] = find(f[x]);
+}
+
+void unionset(int x, int y) {
+    int fx = find(x), fy = find(y);
+    if (fx == fy) return;
+    if (st[fx].size() > st[fy].size()) swap(fx, fy);
+    f[fx] = fy;
+    for (auto v : st[fx]) {
+        st[fy].insert(v);
+    }
+}
+
+int ans = 0;
+int a[MAX_SIZE], N, pre[MAX_SIZE];
+vector<int> g[MAX_SIZE];
+
+void dfs1(int v, int p) {
+    pre[v] = pre[p] ^ a[v];
+    for (auto nv : g[v]) {
+        if (nv != p) {
+            dfs1(nv, v);
+        }
+    }
+}
+
+void dfs2(int v, int p) {
+    int s = find(v);
+    st[s].insert(pre[v]);
+    bool valid = true;
+    for (auto nv : g[v]) {
+        if (nv != p) {
+            dfs2(nv, v);
+        }
+    }
+
+    for (auto nv : g[v]) {
+        if (nv != p) {
+            int x = find(v), y = find(nv);
+            if (st[x].size() > st[y].size()) {
+                swap(x, y);
+            }
+
+            for (auto xx : st[x]) {
+                if (st[y].find(xx ^ a[v]) != st[y].end()) {
+                    valid = false;
+                    break;
+                }
+            }
+
+            unionset(x, y);
+
+            if (!valid) break;
+        }
+    }
+
+    if (!valid) {
+        s = find(v);
+        st[s].clear();
+        ans++;
+    }
+}
+
+int main() {
+    int i;
+    scanf("%d", &N);
+    for (i = 1; i <= N; ++i) {
+        scanf("%d", &a[i]);
+        f[i] = i;
+    }
+
+    for (i = 1; i < N; ++i) {
+        int u, v;
+        scanf("%d%d", &u, &v);
+        g[u].push_back(v);
+        g[v].push_back(u);
+    }
+
+    debug("here\n");
+    dfs1(1, 0);
+    debug("here\n");
+    dfs2(1, 0);
+
+    printf("%d\n", ans);
     return 0;
 }

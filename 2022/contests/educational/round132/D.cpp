@@ -1,8 +1,9 @@
 #pragma GCC optimize(3)
 #pragma GCC optimize(2)
 // #define D
-#define MAX_SIZE 200011
+#define MAX_SIZE 300011
 #define BLOCK 450
+#define MAX_LOG 19
 #ifdef D
 #define debug(...) fprintf(stderr, __VA_ARGS__)
 #else
@@ -84,7 +85,91 @@ ll extented_crt(vector<ll> m , vector<ll> r){
     return R > 0 ? R : R + MM;
 }
 
-int main() {
+int logs[MAX_SIZE];
 
+void precompute() {
+    int i;
+    for (i = 2; i < MAX_SIZE; i++) {
+        logs[i] = logs[i/2] + 1;
+    }
+}
+
+int a[MAX_SIZE];
+
+struct ST {
+    
+    int table[MAX_LOG][MAX_SIZE];
+    int n;
+    int tp;
+
+    int RMQ(int l, int r) {
+        if (l > r) return 4 * MAX_SIZE * (tp ? 1 : -1);
+        int len = r - l + 1;
+        if (tp) {
+            return min(table[logs[len]][l], table[logs[len]][r - (1 << logs[len]) + 1]);
+        } else {
+            return max(table[logs[len]][l], table[logs[len]][r - (1 << logs[len]) + 1]);
+        }
+    }
+
+    void build() {
+        int i, j;
+        for (i = 1; i <= n; i++) {
+            table[0][i] = a[i];
+        }
+        
+        for (i = 1; i < MAX_LOG; i++) {
+            int prel = (1 << (i - 1));
+            for (j = 1; j <= n; j++) {
+                if (j + prel <= n) {
+                    if (tp) {
+                        table[i][j] = min(table[i-1][j], table[i-1][j+prel]);
+                    } else {
+                        table[i][j] = max(table[i-1][j], table[i-1][j+prel]);
+                    }
+                } else {
+                    table[i][j] = table[i-1][j];
+                }
+            }
+        }
+    }
+};
+
+ST mn;
+int N, M, Q;
+
+int main() {
+    precompute();
+    scanf("%d%d", &N, &M);
+    mn.tp = 1;
+    mn.n = M;
+    int i;
+    for (i = 1; i <= M; ++i) {
+        int v;
+        scanf("%d", &v);
+        a[i] = N - v;
+    } 
+
+    mn.build();
+
+    scanf("%d", &Q);
+    while (Q-- > 0) {
+        int xs, ys, xf, yf, k;
+        scanf("%d%d%d%d%d", &ys, &xs, &yf, &xf, &k);
+        ys = N - ys + 1;
+        yf = N - yf + 1;
+        if (abs(xs - xf) % k != 0 || abs(ys - yf) % k != 0) {
+            printf("NO\n");
+        } else {
+            ys = ys % k;
+            if (ys == 0) ys = k;
+            if (xs > xf) swap(xs, xf);
+            if (mn.RMQ(xs, xf) >= ys) {
+                printf("YES\n");
+            } else {
+                printf("NO\n");
+            }
+        }
+    }
     return 0;
 }

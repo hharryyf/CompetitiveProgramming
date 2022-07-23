@@ -1,0 +1,33 @@
+I did the practice individually, solved 5/6 problems, F is way too difficult.
+
+A. Three Doors [solved] (diff=? login)
+Just implement.
+
+B. Also Try Minecraft [solved] (diff=?, greedy)
+Note that it is always optimal to walk stright to the target. Hence, we can use prefix/suffix sum to get the answer quickly.
+
+C. Recover an RBS [solved] (diff=?, greedy)
+It is obvious that we can always calculate how many '(' we need to put and how many ')' we need to put.
+Suppose these are l and r respectively. Then, we should know that if we replace the first l '?' by '(' and last r '?' by ')', 
+the bracket sequence is always balanced. Now we actually just care if we can swap two positions of ? one with ( and one with ),
+such that the resulting sequence is still balanced. We should always select the last ? replaced by ( and the first ? replaced by ).
+
+
+D. Rorororobot [solved] (diff=? sparse table)
+It is very simple to see that we can always walk upward to the upmost position y we can reach with only K moves at a time.
+Then, we basically need to do 2 checks:
+(1) if K | (xs - xf) and K | (ys - yf)
+(2) if there are some blocked cells in column ys to yf that is higher than or equal to y.
+(2) can be done with sparse table.  
+
+E. XOR Tree [solved] (diff=?, small to large)
+This is a very classic problem, we just use the small to large technique. Note that xor(x, y) = pre[x] ^ pre[y] ^ a[LCA(x, y)].
+Here pre[x] is the xor of all numbers from root to x. We can just maintain all the distinct pre[x] that is in the subtree of x.
+If we merge two subtrees of v, and there exists a duplication, we just need to clear the set x and y and add the answer by 1.
+Note that the reason we can always only change the number at the v instead of some nodes in the subtree of v 
+is because we can always change a[v] to a very large number and make sure the subtree xor can never be the same with the xor of other parts 
+of the tree.   
+
+
+F. Multiset of Strings [fail] (diff=?)
+This is too hard, I didn't have a brute force solution.

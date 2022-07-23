@@ -84,7 +84,36 @@ ll extented_crt(vector<ll> m , vector<ll> r){
     return R > 0 ? R : R + MM;
 }
 
-int main() {
+ll pre[MAX_SIZE], suf[MAX_SIZE];
+ll a[MAX_SIZE];
+int N, Q;
 
+int main() {
+    int i;
+    scanf("%d%d", &N, &Q);
+    for (i = 1; i <= N; ++i) scanf("%lld", &a[i]);
+    for (i = 2; i <= N; ++i) {
+        pre[i] = pre[i-1];
+        if (a[i] < a[i-1]) {
+            pre[i] += a[i-1] - a[i];
+        }
+    }
+
+    for (i = N - 1; i >= 1; --i) {
+        suf[i] = suf[i+1];
+        if (a[i] < a[i+1]) {
+            suf[i] += a[i+1] - a[i];
+        }
+    }
+
+    while (Q-- > 0) {
+        int l, r;
+        scanf("%d%d", &l, &r);
+        if (r > l) {
+            printf("%lld\n", pre[r] - pre[l]);
+        } else {
+            printf("%lld\n", -suf[l] + suf[r]);
+        }
+    }
     return 0;
 }

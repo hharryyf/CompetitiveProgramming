@@ -1,4 +1,4 @@
-This is an amazing round, we (I) cleared out all problems. 
+This is an amazing round, we (actually I) cleared out all problems. 
 https://codeforces.com/contest/1706
 
 A. Another String Minimization Problem [solved by Edward] (diff=800, login)
